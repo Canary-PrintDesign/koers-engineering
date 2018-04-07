@@ -1,0 +1,15 @@
+/*
+
+  Clearfix
+  ---
+  Micro Clearfix http://www.cssmojo.com/the-very-latest-clearfix-reloaded/
+
+*/
+
+@mixin clearfix() {
+  &:after {
+    content: "" !important;
+    display: block !important;
+    clear: both !important;
+  }
+}

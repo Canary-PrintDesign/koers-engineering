@@ -1,0 +1,24 @@
+/*
+
+  Buttons
+  ---
+  Don't forget hover, active states
+
+*/
+
+.button {
+  > * {
+    vertical-align: middle;
+  }
+}
+
+a.button {
+  text-decoration: none;
+}
+
+button.button--link {
+  border: none;
+  background: none;
+  outline: none;
+  display: inline-block;
+}
