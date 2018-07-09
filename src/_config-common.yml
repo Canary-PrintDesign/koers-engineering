@@ -2,24 +2,24 @@
 collections:
 
 # !- Site Configuration
-url: "" # primary url the website will reside at
-title: "Example Site" # Site title
-title-safe: "example-site" # Url safe version of site title. eg: "lowercase-dash-separated-text"
+url: "koers-eng.com" # primary url the website will reside at
+title: "Koers & Associates Engineering LTD." # Site title
+title-safe: "koers-engineering" # Url safe version of site title. eg: "lowercase-dash-separated-text"
 title-delimiter: " • " # Symbol to separate page title and site title. Include spaces. eg: "Home • Site Title"
-tagline: "The exampliest site" # Website tagline
+tagline: "Serving Vancouver Island's Infrastructure Needs Since 1987" # Website tagline
 license: "GNU GPL v3 http://www.gnu.org/licenses/gpl-3.0.en.html"
-copyright: "Example Site" # Will format out to "©{year} Example Site"
+copyright: "Koers & Associates Engineering LTD." # Will format out to "©{year} Example Site"
 webmaster: "info@example.com" # email address for master of website
 lang: "en_US" # base language for website
 logo: "/assets/site-logo.png"
-keywords: "" # Keywords to describe website
-description: "" # Written description of website. Keep under 250 words if possible
+keywords: "Consulting engineering infrastructure municipal water resources land development" # Keywords to describe website
+description: "Koers & Associates Engineering Ltd. provides consulting engineering services in the municipal infrastructure, water resources, and land development fields." # Written description of website. Keep under 250 words if possible
 author: "" # Site Author
 
 fonts: true
 # !- Publishing Information
-creator: "@example" # Name or twitter handle of the website creator
-email: "creator@exaple.com" # email address of website creator
+creator: "Canary Print & Design" # Name or twitter handle of the website creator
+email: "admin@canaryprint.ca" # email address of website creator
 
 # !- Social
 social:
