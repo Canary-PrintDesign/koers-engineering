@@ -13,12 +13,10 @@ $global-type-legible: false !default;
 $global-measure: 65ch !default;
 
 // Define font stacks here
-// You can used existing font stacks as fallbacks
-// eg: mono spaced stack would be
 //       'Fira-Mono', Hasklig, $monospace-stack
 $fonts: (
-  body: "#{$helvetica-stack}",
-  display: "#{$garamond-stack}",
-  mono: "Hasklig, #{$monospace-stack}",
+  body: "Lato, #{$helvetica-stack}",
+  display: "Libre Baskerville, #{$times-stack}",
+  mono: "#{$monospace-stack}",
 );
 

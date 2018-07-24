@@ -1,11 +1,10 @@
-- name: Roboto
+- name: Lato
   weight:
     - 300
     - 400
+    - 700
 
-- name: Open+Sans
+- name: Libre+Baskerville
   weight:
-    - 300
-    - 300i
-  fallback:
-    -
+    - 400
+    - 700
