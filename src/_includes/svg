@@ -1,0 +1,5 @@
+{% if include.path %}
+  <svg {% if include.viewbox %}viewBox="{{ include.viewbox }}"{% endif %}>
+    <use xlink:href="{{ include.path }}"></use>
+  </svg>
+{% endif %}
