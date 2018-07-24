@@ -5,9 +5,16 @@
 
 */
 
-$purple: (
-  base: hsl(270, 50%, 40%),
-  hover: hsl(270, 50%, 60%)
+$blue: (
+  base: hsl(212, 58%, 24%),
+  logo: hsl(229, 62%, 30%),
+  dark: hsl(223, 39%, 9%),
+  overlay: hsla(212, 58%, 24%, .5)
+);
+
+$yellow: (
+  base: hsl(40, 86%, 60%),
+  hover: hsl(40, 86%, 60%) // #TODO needs an actual hover color
 );
 
 $greys: (
@@ -40,14 +47,20 @@ $color-grey--dark:     -color($greys,  30);
 $color-grey--darker:   -color($greys,  20);
 $color-grey--darkest:  -color($greys,   0);
 
-$color-purple:        -color($purple);
-$color-purple--hover: -color($purple, hover);
+$color-grey--lightest-alpha: hsla(255, 100%, 100%, 0.5);
 
-$color-text:        $color-grey--darkest;
+$color-yellow:        -color($yellow);
+$color-yellow--hover: -color($yellow, hover);
+
+$color-blue:          -color($blue);
+$color-blue--dark:    -color($blue, dark);
+$color-blue--logo:    -color($blue, logo);
+$color-blue--overlay: -color($blue, overlay);
+
+$color-text:        -color($blue, base);
 $color-text--light: $color-grey--lightest;
-$color-text--dark:  $color-grey--dark;
+$color-text--dark:  -color($blue, dark);
 
 $color-box-shadow:   -color($greys--alpha, 20);
 $color-text-shadow:  -color($greys--alpha, 50);
-$color-grey-overlay: -color($greys--alpha, 70);
-
+$color-overlay: -color($blue, overlay);
