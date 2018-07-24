@@ -1,0 +1,27 @@
+<div class="colophon">
+  <div>
+    {% include svg path="/assets/icons/Koers.svg#logo" %}
+
+    <ul>
+      <li>Planning &amp; Design</li>
+      <li>Project Management</li>
+      <li>Construction</li>
+    </ul>
+  </div>
+
+  <div>
+    <ul>
+      <li>{% include components/email.html email=site.data.contact.email %}</li>
+      <li>{% include components/phone.html item=site.data.contact.phone %}</li>
+      <li>{% include components/address.html item=site.data.contact.address %}</li>
+    </ul>
+  </div>
+
+  <div>
+    <h2>Get in touch</h2>
+
+    <p>Interested in our services? Contact us today to discuss how we can help you with your next project.
+
+    <a href="/contact" class="button button--ghost">Contact us</a>
+  </div>
+</div>

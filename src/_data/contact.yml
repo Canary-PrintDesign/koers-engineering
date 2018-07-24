@@ -1,11 +1,10 @@
-email: info@example.com
+email: info@koers-eng.com
 
 phone:
-  value: 15555555555
-  display: 1 (555) 555-5555
+  value: 12502483151
+  display: (250) 248-3151
 
 address:
-  street: 123 Fake St.
-  city: Fakeville
-  state: Fakeland
-  zip: A1A 1A1
+  street: 194 Memorial Avenue
+  city: Parksville
+  state: BC
