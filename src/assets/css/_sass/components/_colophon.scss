@@ -1,0 +1,114 @@
+.colophon {
+  display: flex;
+  flex-direction: column;
+  color: $color-text--light;
+
+  @include screen($bp-tablet) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  @include screen($bp-desktop) {
+    align-items: stretch;
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+  }
+
+  svg {
+    width: 80vw;
+    @include icon--color(#fff);
+    @include margin-center;
+
+    @include screen($bp-tablet) {
+      width: auto;
+      max-height: -size($size-header);
+    }
+  }
+
+  .icon::before {
+    @include margin-right($gutter);
+    width: $gutter--large;
+    text-align: center;
+  }
+
+  [itemprop=addressLocality] {
+    margin-left: $gutter--large + $gutter;
+  }
+}
+
+.colophon__section {
+  flex-grow: 1;
+  @include padding-vertical($gutter--xl);
+
+  @include screen($bp-desktop) {
+    padding: 0;
+    flex-basis: 33%;
+    @include margin-vertical($gutter--xl);
+  }
+
+  &:not(:last-of-type) {
+    border-bottom: 2px solid $color-yellow;
+
+    @include screen($bp-tablet) {
+      border-bottom: none;
+    }
+
+    @include screen($bp-desktop) {
+      border-right: 2px solid $color-yellow;
+    }
+  }
+
+  &:last-of-type {
+    @include screen($bp-tablet) {
+      border-top: 2px solid $color-yellow;
+    }
+
+    @include screen($bp-desktop) {
+      border-top: none;
+    }
+  }
+}
+
+.colophon__about {
+  text-align: center;
+  font-weight: bold;
+  @include font-display;
+
+  li {
+    @include margin-vertical($gutter--large);
+  }
+}
+
+.colophon__contact-info {
+  display: flex;
+  justify-content: center;
+  @include font-display;
+
+  li {
+    @include margin-vertical($gutter--large);
+  }
+
+  a {
+    text-decoration: none;
+    color: $color-text--light;
+  }
+}
+
+.colophon__cta {
+  text-align: center;
+
+  .button {
+    @include screen($bp-tablet) {
+      display: inline-block;
+      @include padding-horizontal($gutter--huge);
+    }
+  }
+
+  p {
+    @include margin-bottom($gutter--large);
+  }
+}

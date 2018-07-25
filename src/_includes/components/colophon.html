@@ -1,27 +1,33 @@
 <div class="colophon">
-  <div>
-    {% include svg path="/assets/icons/Koers.svg#logo" %}
+  <div class="colophon__about colophon__section">
+    <div class="about">
+      {% include svg path="/assets/icons/Koers.svg#logo" %}
 
-    <ul>
-      <li>Planning &amp; Design</li>
-      <li>Project Management</li>
-      <li>Construction</li>
-    </ul>
+      <ul>
+        <li>Planning &amp; Design</li>
+        <li>Project Management</li>
+        <li>Construction</li>
+      </ul>
+    </div>
   </div>
 
-  <div>
-    <ul>
-      <li>{% include components/email.html email=site.data.contact.email %}</li>
-      <li>{% include components/phone.html item=site.data.contact.phone %}</li>
-      <li>{% include components/address.html item=site.data.contact.address %}</li>
-    </ul>
+  <div class="colophon__contact-info colophon__section">
+    <div class="contact-info">
+      <ul>
+        <li>{% include components/email.html email=site.data.contact.email %}</li>
+        <li>{% include components/phone.html item=site.data.contact.phone %}</li>
+        <li>{% include components/address.html item=site.data.contact.address %}</li>
+      </ul>
+    </div>
   </div>
 
-  <div>
-    <h2>Get in touch</h2>
+  <div class="colophon__cta colophon__section">
+    <div class="cta">
+      <h2>Get in touch</h2>
 
-    <p>Interested in our services? Contact us today to discuss how we can help you with your next project.
+      <p>Interested in our services? Contact us today to discuss how we can help you with your next project.</p>
 
-    <a href="/contact" class="button button--ghost">Contact us</a>
+      <a href="/contact" class="button button--ghost button--narrow">Contact us</a>
+    </div>
   </div>
 </div>
