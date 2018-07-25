@@ -4,13 +4,59 @@
 
 */
 
-[class^=icon] {
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: contain;
-  display: inline-block;
+.icon {
+  font-family: 'koers' !important;
+  speak: none;
+  font-style: normal;
+  line-height: 1;
+}
 
-  &--inline {
-    background-image: none;
+.icon::before {
+  display: inline-block;
+}
+
+.icon--about {
+  &:before {
+    content: $icon--about;
+  }
+}
+.icon--career {
+  &:before {
+    content: $icon--career;
+  }
+}
+.icon--construction {
+  &:before {
+    content: $icon--construction;
+  }
+}
+.icon--planning {
+  &:before {
+    content: $icon--planning;
+  }
+}
+.icon--location {
+  &:before {
+    content: $icon--location;
+  }
+}
+.icon--contact {
+  &:before {
+    content: $icon--contact;
+  }
+}
+.icon--mail {
+  &:before {
+    content: $icon--mail;
+  }
+}
+.icon--projects {
+  &:before {
+    content: $icon--projects;
+  }
+}
+.icon--service {
+  &:before {
+    content: $icon--service;
   }
 }

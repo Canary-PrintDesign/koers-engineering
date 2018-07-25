@@ -5,8 +5,22 @@
 
 */
 
-@mixin icon-color($color) {
-  path {
-    fill: $color;
-  }
+@mixin icon--color($color) {
+  fill: $color;
 }
+
+@font-face {
+  font-family: 'koers';
+  src: url('/assets/fonts/koers.woff2') format('woff2');
+}
+
+$icon--about: "\f05a";
+$icon--career: "\f0c0";
+$icon--construction: "\f1b3";
+$icon--planning: "\e902";
+$icon--location: "\e903";
+$icon--contact: "\e904";
+$icon--mail: "\e905";
+$icon--projects: "\e906";
+$icon--service: "\e907";
+
