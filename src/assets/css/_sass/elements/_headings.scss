@@ -3,3 +3,13 @@
   Headings
 
 */
+
+h1 {
+  text-transform: capitalize;
+  @include font-display;
+}
+
+h2 {
+  text-transform: capitalize;
+  @include font-display;
+}
