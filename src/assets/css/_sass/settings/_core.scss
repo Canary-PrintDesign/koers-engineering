@@ -20,6 +20,9 @@ $global-transition-timing-function: ease-in-out !default;
 // set this to `false`.
 $static-images: true !default;
 
+// Index Levels
+$z-site-header: 9;
+
 // Majors element sizes
 $size-header: -size(64px);
 $size-header--desktop: -size(80px);
