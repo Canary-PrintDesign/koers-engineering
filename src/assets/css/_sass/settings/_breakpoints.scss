@@ -7,6 +7,7 @@
 */
 
 $bp-phone: 20em;
+$bp-phone--xl: 25em;
 $bp-tablet: 48em;
 $bp-desktop: 64em;
 $bp-large: 77em;
@@ -14,6 +15,7 @@ $bp-extra-large: 90em;
 
 $breakpoints: (
   'phone': $bp-phone,
+  'phone-xl': $bp-phone--xl,
   'tablet': $bp-tablet,
   'desktop': $bp-desktop,
   'large': $bp-large,
