@@ -1,0 +1,117 @@
+.feature {
+  color: $color-blue;
+
+  .feature__wrapper {
+    @include margin-center;
+    @include padding-vertical($gutter--xl);
+    @include wrapper-sizing;
+  }
+
+  .button {
+    @include screen($bp-desktop) {
+      white-space: nowrap;
+      display: inline-block;
+      margin-left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}
+
+.feature--inverted {
+  background-color: $color-blue;
+  color: $color-text--light;
+}
+
+.feature--flip .feature__wrapper {
+  @include screen($bp-tablet) {
+    flex-direction: row-reverse !important;
+  }
+}
+
+.feature__title--highlight {
+  text-transform: uppercase;
+  text-align: center;
+
+  &::after {
+    content: '';
+    display: block;
+    width: $gutter--enormous;
+    border-bottom: 2px solid $color-yellow;
+    @include margin-bottom($gutter--large);
+    @include padding-bottom($gutter--large);
+    @include margin-center;
+  }
+}
+
+.feature--secondary {
+  .feature__wrapper {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    @include padding(0);
+    @include flex-column-to-row($bp-tablet);
+
+    &::after {
+      @include screen($bp-desktop) {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 50%;
+        top: 0;
+        transform: translateX(-50%);
+        border-style: solid;
+        border-width: $gutter * 5;
+        border-color: currentColor transparent transparent;
+      }
+    }
+  }
+
+  .image-wrapper {
+    @include screen($bp-tablet) {
+      height: 0;
+      max-width: 50%;
+    }
+
+    @include screen($bp-desktop) {
+      max-width: calc(100% / 3);
+    }
+  }
+
+  .content__wrapper {
+    @include padding($gutter--large);
+
+    @include screen($bp-tablet) {
+      max-width: 50%;
+    }
+
+    @include screen($bp-desktop) {
+      max-width: calc(100% / 3 * 2);
+      @include padding($gutter--huge);
+    }
+  }
+
+
+}
+
+.feature .service-list {
+  display: flex;
+  @include flex-column-to-row($bp-tablet);
+
+  .service-teaser {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+
+.feature .project-list {
+  display: flex;
+  flex-direction: column;
+  @include flex-column-to-row($bp-tablet);
+
+  @include screen($bp-tablet) {
+    flex-grow: 1;
+    justify-content: space-between;
+    @include flex-children-even(3, $gutter--large);
+  }
+}
