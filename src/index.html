@@ -3,9 +3,21 @@ layout: default
 ---
 
 <section class="feature">
-  <div class="img-wrapper">
-    <img src="//placehold.it/450x575" />
+  <div class="feature__wrapper">
+    <h1 class="feature__title feature__title--highlight">Recent Projects</h1>
+
+    <p>Our projects comprise the full spectrum of municipal, residential, commercial, industrial, and environmental infrastructure development and upgrading, including:</p>
+
+    <div class="project-list">
+      {% for project in site.projects %}
+        {% include components/project-thumbnail.html project=project %}
+      {% endfor %}
+    </div>
+
+    <a href="/projects" class="button">View all projects</a>
   </div>
+</section>
+
 <section class="feature feature--secondary feature--flip feature--inverted">
   <div class="feature__wrapper">
     <div class="image-wrapper">
