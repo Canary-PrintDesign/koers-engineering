@@ -1,0 +1,21 @@
+.hero {
+  background-image: url(//placehold.it/1440x700);
+  background-position: center center;
+  background-size: cover cover;
+  height: 100vh;
+  max-height: 768px;
+  @include flex-center;
+
+  .feature__title {
+    text-align: center;
+    @include margin-bottom($gutter--xl);
+    @include line-wrap;
+  }
+
+  small {
+    display: block;
+    text-transform: uppercase;
+    @include font-body;
+    @include margin-bottom($gutter--large);
+  }
+}

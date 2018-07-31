@@ -2,6 +2,36 @@
 layout: default
 ---
 
+<section class="hero feature feature--inverted">
+  <div class="feature__wrapper">
+    <h1 class="feature__title">
+      <small>Consulting Engineers</small>Serving
+      Vancouver Island's
+      Infrastructure Needs
+      Since 1987
+    </h1>
+
+    <a href="/projects" class="button button--ghost">View our projects</a>
+  </div>
+</section>
+
+<section class="feature feature--inverted">
+  <div class="feature__wrapper">
+    <h1 class="feature__title feature__title--highlight">Consulting Engineering Services</h1>
+
+    <p>
+      <strong>Koers &amp; Associates Engineering Ltd.</strong> provides a range of services, from planning, feasibility studies, and computer modelling through preliminary and detailed designs to construction services, operational assistance, and project management.</p>
+
+    <div class="service-list">
+      {% for service in site.services %}
+        {% include components/service-teaser.html service=service %}
+      {% endfor %}
+    </div>
+
+    <a href="/services" class="button">View all services</a>
+  </div>
+</section>
+
 <section class="feature">
   <div class="feature__wrapper">
     <h1 class="feature__title feature__title--highlight">Recent Projects</h1>
