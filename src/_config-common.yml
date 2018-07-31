@@ -1,5 +1,7 @@
 # !- Content Details
 collections:
+  projects:
+  services:
 
 # !- Site Configuration
 url: "koers-eng.com" # primary url the website will reside at
