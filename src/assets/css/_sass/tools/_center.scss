@@ -45,3 +45,11 @@
     transform: translate(-$top, -$left);
   }
 }
+
+// use flexbox to position an element vertically and horizontally centered
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
