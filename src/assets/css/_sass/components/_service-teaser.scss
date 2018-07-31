@@ -1,0 +1,10 @@
+.service-teaser {
+  text-align: center;
+  @include margin-bottom($gutter--xl);
+
+  .icon {
+    display: block;
+    font-size: 3em;
+    @include margin-bottom($gutter);
+  }
+}
