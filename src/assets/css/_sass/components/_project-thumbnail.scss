@@ -1,0 +1,53 @@
+.project-thumbnail__link {
+  display: block;
+  color: $color-text--light;
+  text-decoration: none;
+  @include margin-bottom($gutter--large);
+
+  &:hover {
+    .project-thumbnail__title {
+      opacity: 1;
+    }
+  }
+}
+
+.project-thumbnail {
+  display: block;
+  width: 100%;
+  height: 0;
+  padding-top: calc(100% / 3 * 2);
+  background-color: yellow;
+  position: relative;
+
+  img,
+  .project-thumbnail__title {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  img {
+    object-fit: cover;
+    object-position: center center;
+  }
+
+  .project-thumbnail__title {
+    opacity: 0;
+    background-color: $color-blue--overlay;
+    text-align: center;
+    @include h3;
+    @include flex-center;
+    @include transition;
+  }
+
+  small {
+    max-width: 50%;
+    display: block;
+    border-top: 2px solid $color-yellow;
+    @include h4;
+    @include margin-center;
+    @include margin-top($gutter--large)
+    @include padding-top($gutter--large)
+  }
+}
