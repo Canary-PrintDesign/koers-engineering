@@ -1,0 +1,62 @@
+.site-nav {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  height: -size($size-header);
+  background-color: $color-grey--lightest;
+
+  @include screen($bp-desktop) {
+    position: relative;
+    background-color: transparent;
+  }
+}
+
+.site-nav__items {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: space-around;
+  @include padding-horizontal($gutter);
+
+  @include screen($bp-desktop) {
+    justify-content: space-between;
+  }
+}
+
+.site-nav__item {
+  display: flex;
+
+  &:last-of-type {
+    a {
+      @include screen($bp-desktop) {
+        color: $color-yellow;
+        box-shadow: inset 0 0 0 1px currentColor; // create sizeless border
+        @include transition;
+        @include padding-horizontal(48px);
+      }
+    }
+  }
+}
+
+.site-nav__link {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  text-decoration: none;
+  color: $color-blue--dark;
+
+  @include screen($bp-desktop) {
+    font-size: 16px;
+    color: $color-text--light;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+}
+
+.site-nav__item .icon {
+  @include screen($bp-desktop) {
+    display: none;
+  }
+}

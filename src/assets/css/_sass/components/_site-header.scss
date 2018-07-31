@@ -1,0 +1,49 @@
+.site-header {
+  position: fixed;
+  background-color: $color-grey--lightest-alpha;
+  width: 100%;
+  border-bottom: 4px solid $color-yellow;
+  z-index: $z-site-header;
+  @include padding-vertical($gutter--large, $gutter);
+}
+
+.site-header__wrapper {
+  display: flex;
+
+  @include screen($bp-desktop) {
+    @include margin-center;
+    @include wrapper-sizing;
+  }
+}
+
+.site-logo {
+  font-size: 0;
+  @include margin-center;
+  @include icon--color(white)
+
+  @include screen($bp-desktop) {
+    flex-basis: calc(100% / 3 * 2);
+  }
+
+  svg {
+    display: inline-block;
+    height: -size($size-header);
+    @include margin-center;
+
+    @include max-screen($bp-tablet) {
+      width: 70vw;
+    }
+
+    @include screen($bp-tablet) {
+      max-height: -size($size-header);
+    }
+
+    @include screen($bp-desktop) {
+      @include margin-horizontal(0); // reset position
+    }
+  }
+
+  span {
+    display: none;
+  }
+}

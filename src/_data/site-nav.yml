@@ -11,5 +11,18 @@
 #           - url: /blog/cats
 #             text: Cats
 #
-- url: /
-  text: Home
+- url: /services
+  text: Services
+  icon: service
+- url: /projects
+  text: Projects
+  icon: projects
+- url: /about
+  text: About
+  icon: about
+- url: /careers
+  text: Careers
+  icon: career
+- url: /contact
+  text: Contact
+  icon: contact

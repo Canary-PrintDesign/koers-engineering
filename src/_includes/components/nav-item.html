@@ -11,7 +11,8 @@
     {% if page.class contains class %}is-active{% endif %}
   {% endcapture %}
 
-  <a class="{{ class }} " href="{{ include.item.url }}">
-    <span>{{ include.item.text }}</span>
+  <a class="site-nav__link {{ class }}" href="{{ include.item.url }}">
+    <i class="icon icon--{{ include.item.icon }}"></i>
+    <span class="site-nav__inner-text">{{ include.item.text }}</span>
   </a>
 {% endif %}
