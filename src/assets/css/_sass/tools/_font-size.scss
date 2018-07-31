@@ -59,7 +59,7 @@
 }
 
 @mixin h1 {
-  @include font-size(12);
+  @include font-size(40);
 }
 
 @mixin h2 {
@@ -67,11 +67,11 @@
 }
 
 @mixin h3 {
-  @include font-size(24);
+  @include font-size(16);
 }
 
 @mixin h4 {
-  @include font-size(24);
+  @include font-size(10);
 }
 
 @mixin h5 {
@@ -83,6 +83,7 @@
 }
 
 @mixin body {
+  font-weight: 300;
   @include font-size(16);
 }
 

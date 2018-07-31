@@ -3,3 +3,7 @@
   Paragraph
 
 */
+
+p {
+  @include margin-bottom($gutter--large);
+}
