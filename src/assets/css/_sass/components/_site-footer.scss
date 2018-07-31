@@ -9,13 +9,13 @@
 
 .site-copyright {
   text-align: center;
-  color: $color-text;
+  color: $color-grey--lightest-alpha;
   @include padding-vertical($gutter);
 
   a {
-    color: $color-text;
+    color: $color-grey--lightest-alpha;
     font-style: italic;
     text-decoration: none;
-    display: block;
+    @include margin($gutter);
   }
 }
