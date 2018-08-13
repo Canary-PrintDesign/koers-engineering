@@ -60,15 +60,7 @@
       color: inherit;
       position: relative;
       white-space: nowrap;
-
-      &.current::after {
-        position: absolute;
-        content: '';
-        background-color: $color-yellow;
-        height: 2px;
-        top: 0;
-        left: 0;
-      }
+      @include padding-vertical($gutter);
     }
   }
 }

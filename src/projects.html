@@ -3,32 +3,6 @@ layout: default
 permalink: /projects/index.html
 class: projects
 
-project-categories: [
-  {
-    displayName: 'All',
-    slug: 'all'
-  },
-  {
-    displayName: 'Sanitary Sewerage',
-    slug: 'sewage'
-  },
-  {
-    displayName: 'Storm Water',
-    slug: 'storm'
-  },
-  {
-    displayName: 'Roads',
-    slug: 'roads'
-  },
-  {
-    displayName: 'Commercial Land Development',
-    slug: 'commercial'
-  },
-  {
-    displayName: 'Municipal Land Development',
-    slug: 'municipal'
-  }
- ]
 ---
 
 <section class="projects__hero">
@@ -44,13 +18,4 @@ project-categories: [
   </div>
 </section>
 
-<section class="projects">
-  <div class="projects__categories">
-    {% for category in page.project-categories %}
-      <a>
-        {{ category.displayName }}
-      </a>
-    {% endfor %}
-    </span>
-  </div>
-</section>
+{% include components/projects-grid.html %}

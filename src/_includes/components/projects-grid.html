@@ -1,0 +1,16 @@
+<section class="projects">
+  <div class="projects__categories">
+    {% for project in site.projects %}
+      <a href="#">
+        {{ project.title }}
+      </a>
+    {% endfor %}
+    </span>
+  </div>
+
+  <div class="projects__grid">
+    {% for project in site.projects %}
+      {% include components/projects-grid-item.html %}
+    {% endfor %}
+  </div>
+</section>
