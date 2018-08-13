@@ -1,0 +1,52 @@
+.projects__hero {
+  color: $color-grey--lightest;
+  background: linear-gradient(0deg, $color-blue--overlay, $color-blue--overlay), url(//placehold.it/1440x700);
+  background-position: center center;
+  background-size: cover cover;
+  height: 100vh;
+  max-height: 768px;
+  text-align: center;
+  @include flex-center;
+
+  .projects__title {
+    text-align: center;
+    text-transform: uppercase;
+    @include margin-bottom($gutter--xl);
+  }
+
+  hr {
+    background-color: $color-yellow;
+    border: none;
+    height: 2px;
+    width: 100%;
+    max-width: 180px;
+    margin: auto;
+    @include margin-bottom($gutter);
+  }
+
+  .projects__lead {
+    display: block;
+    @include font-body;
+    @include margin-bottom($gutter--large);
+    @include line-wrap;
+  }
+}
+
+.projects {
+  color: $color-blue;
+
+  .projects__wrapper {
+    @include margin-center;
+    @include padding-vertical($gutter--xl);
+    @include wrapper-sizing;
+  }
+
+  .button {
+    @include screen($bp-desktop) {
+      white-space: nowrap;
+      display: inline-block;
+      margin-left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}
