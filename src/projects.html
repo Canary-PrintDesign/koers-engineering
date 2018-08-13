@@ -1,0 +1,86 @@
+---
+layout: default
+permalink: /projects/index.html
+class: projects
+---
+
+<section class="hero feature feature--inverted">
+  <div class="feature__wrapper">
+    <h1 class="feature__title">
+      <small>Consulting Engineers</small>Serving
+      Vancouver Island's
+      Infrastructure Needs
+      Since 1987
+    </h1>
+
+    <a href="/projects" class="button button--ghost">View our projects</a>
+  </div>
+</section>
+
+<section class="feature feature--inverted">
+  <div class="feature__wrapper">
+    <h1 class="feature__title feature__title--highlight">Consulting Engineering Services</h1>
+
+    <p>
+      <strong>Koers &amp; Associates Engineering Ltd.</strong> provides a range of services, from planning, feasibility studies, and computer modelling through preliminary and detailed designs to construction services, operational assistance, and project management.</p>
+
+    <div class="service-list">
+      {% for service in site.services %}
+        {% include components/service-teaser.html service=service %}
+      {% endfor %}
+    </div>
+
+    <a href="/services" class="button">View all services</a>
+  </div>
+</section>
+
+<section class="feature">
+  <div class="feature__wrapper">
+    <h1 class="feature__title feature__title--highlight">Recent Projects</h1>
+
+    <p>Our projects comprise the full spectrum of municipal, residential, commercial, industrial, and environmental infrastructure development and upgrading, including:</p>
+
+    <div class="project-list">
+      {% for project in site.projects %}
+        {% include components/project-thumbnail.html project=project %}
+      {% endfor %}
+    </div>
+
+    <a href="/projects" class="button">View all projects</a>
+  </div>
+</section>
+
+<section class="feature feature--secondary feature--flip feature--inverted">
+  <div class="feature__wrapper">
+    <div class="image-wrapper">
+      <img src="//placehold.it/450x575" />
+    </div>
+
+    <div class="content__wrapper">
+      <h1 class="feature__title">Koers & Associates</h1>
+
+      <p>With a staff of 25, Koers & Associates provides customized and personal civil engineering services that specialize in municipal infrastructure and land development projects from central office locations in Parksville and the Comox Valley.</p>
+
+      <p>Our vision is to continue to solidify our market share on Vancouver Island, by concentrating on providing the best solutions for the engineering needs of our existing clients, with emphasis on environmental stewardship and sustainability.</p>
+      <a href="/about" class="button">Who we are</a>
+    </div>
+  </div>
+</section>
+
+<section class="feature feature--secondary">
+  <div class="feature__wrapper">
+    <div class="image-wrapper">
+      <img src="//placehold.it/450x575" />
+    </div>
+
+    <div class="content__wrapper">
+      <h1 class="feature__title">Join our team</h1>
+
+      <p>Koers & Associates Engineering Ltd. prides itself on providing an environment where its employees thrive on a variety of challenging assignments, whether large or small, and working in small teams or individually, while focused on quality, accountability, and personal satisfaction in meeting or exceeding our client's expectation.</p>
+
+      <p>We are looking for motivated and insightful people seeking new challenges on interesting and fulfilling projects.</p>
+
+      <a href="/careers" class="button">Careers with Koers</a>
+    </div>
+  </div>
+</section>
