@@ -1,10 +1,11 @@
 .projects__hero {
   color: $color-grey--lightest;
+  padding-top: 100px; // need to pad every container to account for the header ??? How should we do this?
   background: linear-gradient(0deg, $color-blue--overlay, $color-blue--overlay), url(//placehold.it/1440x700);
   background-position: center center;
   background-size: cover cover;
   height: 100vh;
-  max-height: 768px;
+  max-height: 610px;
   text-align: center;
   @include flex-center;
 
@@ -21,14 +22,20 @@
     width: 100%;
     max-width: 180px;
     margin: auto;
-    @include margin-bottom($gutter);
+    @include margin-bottom($gutter--xl);
+
+    @include screen($bp-tablet) {
+      @include margin-bottom($gutter);
+    }
   }
 
   .projects__lead {
     display: block;
     @include font-body;
-    @include margin-bottom($gutter--large);
-    @include line-wrap;
+
+    @include screen($bp-tablet) {
+      @include line-wrap;
+    }
   }
 }
 
