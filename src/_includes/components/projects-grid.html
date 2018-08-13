@@ -10,7 +10,7 @@
 
   <div class="projects-grid__items">
     {% for project in site.projects %}
-      {% include components/projects-grid-item.html %}
+      {% include components/projects-grid-item.html project=project %}
     {% endfor %}
   </div>
 </section>

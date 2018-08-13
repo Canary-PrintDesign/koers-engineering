@@ -12,6 +12,7 @@
     justify-content: space-between;
     @include font(display);
     @include font-size(12);
+    @include margin-bottom($gutter--xl);
 
     a {
       text-decoration: none;
