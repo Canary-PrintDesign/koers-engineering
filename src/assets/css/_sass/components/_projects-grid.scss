@@ -19,7 +19,6 @@
       text-transform: uppercase;
       color: inherit;
       position: relative;
-      white-space: nowrap;
       @include padding-vertical($gutter);
     }
   }

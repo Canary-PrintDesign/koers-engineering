@@ -29,7 +29,6 @@
   }
 
   .projects__lead {
-    display: block;
     @include font-body;
 
     @include screen($bp-tablet) {
