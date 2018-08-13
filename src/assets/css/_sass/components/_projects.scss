@@ -5,7 +5,7 @@
   background-position: center center;
   background-size: cover cover;
   height: 100vh;
-  max-height: 610px;
+  max-height: 630px;
   text-align: center;
   @include flex-center;
 
@@ -41,19 +41,34 @@
 
 .projects {
   color: $color-blue;
+  @include margin-center;
+  @include padding-vertical($gutter--huge);
+  @include wrapper-sizing;
 
-  .projects__wrapper {
-    @include margin-center;
-    @include padding-vertical($gutter--xl);
-    @include wrapper-sizing;
-  }
+  .projects__categories {
+    $border: 1px solid $color-blue;
+    border-top: $border;
+    border-bottom: $border;
+    display: flex;
+    justify-content: space-between;
+    @include font(display);
+    @include font-size(12);
 
-  .button {
-    @include screen($bp-desktop) {
+    a {
+      text-decoration: none;
+      text-transform: uppercase;
+      color: inherit;
+      position: relative;
       white-space: nowrap;
-      display: inline-block;
-      margin-left: 50%;
-      transform: translateX(-50%);
+
+      &.current::after {
+        position: absolute;
+        content: '';
+        background-color: $color-yellow;
+        height: 2px;
+        top: 0;
+        left: 0;
+      }
     }
   }
 }
