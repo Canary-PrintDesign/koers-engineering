@@ -1,0 +1,4 @@
+.projects-grid-item {
+  @include flex-even(3);
+  @include padding-horizontal($gutter);
+}

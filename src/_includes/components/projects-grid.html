@@ -1,5 +1,5 @@
-<section class="projects">
-  <div class="projects__categories">
+<section class="projects-grid">
+  <div class="projects-grid__tag-nav">
     {% for project in site.projects %}
       <a href="#">
         {{ project.title }}
@@ -8,7 +8,7 @@
     </span>
   </div>
 
-  <div class="projects__grid">
+  <div class="projects-grid__items">
     {% for project in site.projects %}
       {% include components/projects-grid-item.html %}
     {% endfor %}

@@ -37,29 +37,3 @@
     }
   }
 }
-
-.projects {
-  color: $color-blue;
-  @include margin-center;
-  @include padding-vertical($gutter--huge);
-  @include wrapper-sizing;
-
-  .projects__categories {
-    $border: 1px solid $color-blue;
-    border-top: $border;
-    border-bottom: $border;
-    display: flex;
-    justify-content: space-between;
-    @include font(display);
-    @include font-size(12);
-
-    a {
-      text-decoration: none;
-      text-transform: uppercase;
-      color: inherit;
-      position: relative;
-      white-space: nowrap;
-      @include padding-vertical($gutter);
-    }
-  }
-}

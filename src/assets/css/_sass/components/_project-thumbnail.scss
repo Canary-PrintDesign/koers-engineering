@@ -47,7 +47,7 @@
     border-top: 2px solid $color-yellow;
     @include h4;
     @include margin-center;
-    @include margin-top($gutter--large)
-    @include padding-top($gutter--large)
+    @include margin-top($gutter--large);
+    @include padding-top($gutter--large);
   }
 }
