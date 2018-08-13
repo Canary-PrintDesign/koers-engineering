@@ -13,19 +13,18 @@
     text-align: center;
     text-transform: uppercase;
     @include margin-bottom($gutter--xl);
-  }
 
-  hr {
-    background-color: $color-yellow;
-    border: none;
-    height: 2px;
-    width: 100%;
-    max-width: 180px;
-    margin: auto;
-    @include margin-bottom($gutter--xl);
+    &::after {
+      content: '';
+      display: block;
+      width: $gutter--enormous;
+      border-bottom: 2px solid $color-yellow;
+      @include padding-bottom($gutter--large);
+      @include margin-center;
+    }
 
     @include screen($bp-tablet) {
-      @include margin-bottom($gutter);
+      margin-bottom: 0;
     }
   }
 
