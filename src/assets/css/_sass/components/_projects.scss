@@ -1,6 +1,6 @@
 .projects__hero {
   color: $color-grey--lightest;
-  padding-top: 100px; // need to pad every container to account for the header ??? How should we do this?
+  padding-top: 100px; // #TODO implement a better solution than static header height
   background: linear-gradient(0deg, $color-blue--overlay, $color-blue--overlay), url(//placehold.it/1440x700);
   background-position: center center;
   background-size: cover cover;
@@ -15,12 +15,7 @@
     @include margin-bottom($gutter--xl);
 
     &::after {
-      content: '';
-      display: block;
-      width: $gutter--enormous;
-      border-bottom: 2px solid $color-yellow;
-      @include padding-bottom($gutter--large);
-      @include margin-center;
+      @include horizontal-rule;
     }
 
     @include screen($bp-tablet) {
