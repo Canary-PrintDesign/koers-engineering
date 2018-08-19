@@ -1,51 +1,80 @@
 .project-thumbnail__link {
-  display: block;
   color: $color-text--light;
+  display: block;
   text-decoration: none;
   @include margin-bottom($gutter--large);
 
   &:hover {
-    .project-thumbnail__title {
-      opacity: 1;
+    .project-thumbnail--collapsed {
+      .project-thumbnail__title {
+        opacity: 1;
+      }
     }
   }
 }
 
 .project-thumbnail {
-  display: block;
-  width: 100%;
-  height: 0;
-  padding-top: calc(100% / 3 * 2);
-  background-color: yellow;
-  position: relative;
+  background-color: $color-blue;
 
-  img,
-  .project-thumbnail__title {
-    position: absolute;
-    top: 0;
+  .project-thumbnail__image-wrapper {
+    background-color: orange;
+    overflow: hidden;
+    padding-bottom: calc(100% / 3 * 2);
+    position: relative;
     width: 100%;
-    height: 100%;
   }
 
   img {
+    height: 100%;
     object-fit: cover;
-    object-position: center center;
+    position: absolute;
+    width: 100%;
+  }
+
+  .project-thumbnail__content {
+    padding: $gutter;
   }
 
   .project-thumbnail__title {
-    opacity: 0;
-    background-color: $color-blue--overlay;
-    text-align: center;
     @include h3;
-    @include flex-center;
-    @include transition;
   }
 
   small {
-    max-width: 50%;
     display: block;
-    border-top: 2px solid $color-yellow;
     @include h4;
+  }
+
+  .project-thumbnail__description {
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+.project-thumbnail--collapsed {
+  position: relative;
+
+  .project-thumbnail__content {
+    padding: 0;
+  }
+
+  .project-thumbnail__title {
+    background-color: $color-blue--overlay;
+    height: 100%;
+    opacity: 0;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 100%;
+    @include transition;
+    @include flex-center;
+  }
+
+  small {
+    border-top: 2px solid $color-yellow;
+    max-width: 50%;
     @include margin-center;
     @include margin-top($gutter--large);
     @include padding-top($gutter--large);
