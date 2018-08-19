@@ -4,8 +4,8 @@
 
 */
 
-@mixin vertical-borders {
-  $border: 1px solid $color-blue;
-  border-top: $border;
-  border-bottom: $border;
+@mixin borders-vertical {
+  border-style: solid;
+  border-color: $color-blue;
+  border-width: 1px 0;
 }
