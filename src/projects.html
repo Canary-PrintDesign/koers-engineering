@@ -14,14 +14,9 @@ class: projects
   </div>
 </section>
 
-<div class="projects-wrapper">
-  <section class="projects__list projects-list">
+<section class="projects-wrapper">
+  <div>
     {% include components/projects-filter.html %}
-
-    <div class="projects-list__container">
-      {% for project in site.projects %}
-        {% include components/project-thumbnail.html project=project %}
-      {% endfor %}
-    </div>
-  </section>
-</div>
+    {% include components/projects-list.html %}
+  </div>
+</section>

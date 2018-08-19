@@ -40,7 +40,7 @@ layout: default
 
     <div class="project-list">
       {% for project in site.projects %}
-        {% include components/project-thumbnail.html project=project %}
+        {% include components/project-thumbnail.html project=project collapsed=true %}
       {% endfor %}
     </div>
 
