@@ -16,4 +16,18 @@ class: projects
   </div>
 </section>
 
-{% include components/projects-grid.html %}
+<section class="projects__list projects-list">
+  <div class="projects-list__filter">
+    {% for project in site.projects %}
+      <a href="#">
+        {{ project.title }}
+      </a>
+    {% endfor %}
+  </div>
+
+  <div class="projects-list__container">
+    {% for project in site.projects %}
+      {% include components/project-thumbnail.html project=project %}
+    {% endfor %}
+  </div>
+</section>
