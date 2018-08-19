@@ -2,7 +2,6 @@
 collections:
   projects:
   services:
-defaults:
 
 # !- Site Configuration
 url: "koers-eng.com" # primary url the website will reside at
