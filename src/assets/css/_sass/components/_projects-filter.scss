@@ -1,0 +1,17 @@
+.projects-filter {
+  display: flex;
+  flex-wrap: wrap;
+  @include margin-vertical($gutter--large);
+}
+
+.projects-filter__tag {
+  text-align: center;
+  flex-grow: 1;
+  cursor: pointer;
+  @include borders-vertical;
+
+  &--active {
+    color: $color-yellow;
+    border-color: $color-yellow;
+  }
+}

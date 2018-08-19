@@ -1,0 +1,17 @@
+{% capture tags %}
+  {% for project in site.projects %}
+    {% for tag in project.tags %}
+      {{ tag | strip }}
+    {% endfor %}
+  {% endfor %}
+{% endcapture %}
+
+{% assign tags = tags | split: ' ' | uniq %}
+
+<div class="projects-filter">
+  {% for tag in tags %}
+    <div class="projects-filter__tag">
+      {{ tag | strip | replace: '-', ' ' | upcase }}
+    </div>
+  {% endfor %}
+</div>
