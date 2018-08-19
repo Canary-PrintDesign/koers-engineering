@@ -1,16 +1,15 @@
-<section class="projects-grid">
-  <div class="projects-grid__tag-nav">
+<section class="projects-list">
+  <div class="projects-list__filter">
     {% for project in site.projects %}
       <a href="#">
         {{ project.title }}
       </a>
     {% endfor %}
-    </span>
   </div>
 
-  <div class="projects-grid__items">
+  <div class="projects-list__container">
     {% for project in site.projects %}
-      {% include components/projects-grid-item.html project=project %}
+      {% include components/project-thumbnail.html project=project %}
     {% endfor %}
   </div>
 </section>
