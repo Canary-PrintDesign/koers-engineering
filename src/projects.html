@@ -1,0 +1,22 @@
+---
+layout: default
+permalink: /projects/index.html
+class: projects
+---
+<section class="hero feature feature--inverted">
+  <div class="feature__wrapper">
+    <h1 class="feature__title feature__title--highlight">Our Projects</h1>
+
+    <p>
+      <strong>Koers & Associates Engineering Ltd.</strong> projects comprise the full spectrum of municipal, residential,
+      commercial, industrial, and environmental infrastructure development and upgrading.
+    </p>
+  </div>
+</section>
+
+<section class="projects-wrapper">
+  <div>
+    {% include components/projects-filter.html %}
+    {% include components/projects-list.html %}
+  </div>
+</section>

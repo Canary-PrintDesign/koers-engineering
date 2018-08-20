@@ -1,0 +1,11 @@
+/*
+
+  Borders
+
+*/
+
+@mixin borders-vertical {
+  border-style: solid;
+  border-color: $color-blue;
+  border-width: 1px 0;
+}

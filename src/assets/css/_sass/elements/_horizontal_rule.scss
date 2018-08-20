@@ -1,0 +1,14 @@
+/*
+
+  Horizontal Rule
+
+*/
+
+@mixin horizontal-rule {
+  content: '';
+  display: block;
+  width: $gutter--enormous;
+  border-bottom: 2px solid $color-yellow;
+  @include padding-bottom($gutter--large);
+  @include margin-center;
+}

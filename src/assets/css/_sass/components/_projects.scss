@@ -1,0 +1,14 @@
+.projects-wrapper {
+  @include wrapper-sizing;
+  @include margin-center;
+}
+
+.projects-list {
+  display: flex;
+  @include flex-column-to-row($bp-tablet);
+
+  @include screen($bp-tablet) {
+    align-items: stretch;
+    @include flex-children-even(3, $gutter--large, space-between);
+  }
+}

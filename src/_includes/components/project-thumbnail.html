@@ -1,12 +1,24 @@
-<a href="#" class="project-thumbnail__link">
-  <div class="project-thumbnail">
-    <img src="{{ project.image }}" />
+{% capture classes %}
+  {% if include.collapsed == true %}project-thumbnail--collapsed{% endif %}
+{% endcapture %}
 
-    <h1 class="project-thumbnail__title">
-      <span>
-        {{ project.title }}
-      </span>
-      <small>{{ project.location }}</small>
-    </h1>
+<a href="#" class="project-thumbnail__link">
+  <div class="project-thumbnail {{ classes }}">
+    <div class="project-thumbnail__image-wrapper">
+      <img src="{{ project.image }}" />
+    </div>
+
+    <div class="project-thumbnail__content">
+      <h1 class="project-thumbnail__title">
+        <span>
+          {{ project.title }}
+        </span>
+        <small>{{ project.location }}</small>
+      </h1>
+
+      {% if include.collapsed != true %}
+        <p class="project-thumbnail__description">{{ project.description }}</p>
+      {% endif %}
+    </div>
   </div>
 </a>

@@ -33,13 +33,8 @@
   text-align: center;
 
   &::after {
-    content: '';
-    display: block;
-    width: $gutter--enormous;
-    border-bottom: 2px solid $color-yellow;
+    @include horizontal-rule;
     @include margin-bottom($gutter--large);
-    @include padding-bottom($gutter--large);
-    @include margin-center;
   }
 }
 
