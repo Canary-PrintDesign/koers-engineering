@@ -1,0 +1,40 @@
+.hero--solid {
+  background-color: $color-blue;
+  height: 100vh;
+  padding-top: 100px;
+  max-height: 384px;
+  @include flex-center;
+}
+
+.contact--wrapper {
+  @include screen($bp-phone) {
+    flex-direction: column-reverse;
+  }
+
+  @include screen($bp-tablet) {
+    flex-direction: column;
+  }
+}
+
+.contact--details,
+.contact--map {
+  @include screen($bp-phone) {
+    height: 400px;
+    flex-direction: row-reverse;
+    @include padding($gutter--xl);
+  }
+
+  @include screen($bp-tablet) {
+    width: 50%;
+    max-width: 50%;
+  }
+
+  @include screen($bp-desktop) {
+    height: 500px;
+    @include padding($gutter--huge);
+  }
+}
+
+.contact--address {
+  white-space: pre;
+}
