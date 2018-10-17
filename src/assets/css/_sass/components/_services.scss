@@ -2,3 +2,16 @@
   @include wrapper-sizing;
   @include margin-center;
 }
+
+.services-list {
+  display: flex;
+  flex-flow: row wrap;
+
+  .services-list-item {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    width: 50%;
+  }
+}
+
