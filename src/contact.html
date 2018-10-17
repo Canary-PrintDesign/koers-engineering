@@ -17,17 +17,29 @@ class: contact
 
     <div class="contact--details">
       <p>
-        <strong>Koers & Associates Engineering Ltd.</strong> operates on Vancouver Island, B.C. Please contact our head office:
-
-        <div class="contact--address">194 Memorial Avenue
-P.O. Box 790
-Parksville, B.C.
-Canada  V9P 2G8
-Phone: (250) 248-3151
-Fax: (250) 248-5362
-Email: info@koers-eng.com
-        </div>
+        <span itemprop="legalName"><strong>Koers & Associates Engineering Ltd.</strong></span><br>
+        <em>Operating on Vancouver Island, B.C. Please contact our head office:</em>
       </p>
+      <div class="contact__address" itemprop="address" itemscope itemtype="//schema.org/PostalAddress">
+        <p>
+          <span itemprop="streetAddress">
+            194 Memorial Avenue
+            P.O. Box 790
+          </span>
+        </p>
+        <p>
+          <span itemprop="addressLocality">Parksville</span>, <span itemprop="addressRegion">BC</span>
+        </p>
+        <p>
+          <span itemprop="addressCountry">Canada</span> <span itemprop="postalCode">V9P 2G8</span>
+        </p>
+      </div>
+
+      <div class="contact__communication">
+        <p>Phone: <a href="tel:+12502483151"><span itemprop="telephone" content="+12502483151">(250) 248-3151</span></a></p>
+        <p>Fax: <a href="tel:+12502485362"><span itemprop="faxNumber" content="+12502485362">(250) 248-5362</span></a></p>
+        <p>Email: <a href="mailto:info@koers-eng.com"><span itemprop="email">info@koers-eng.com</span></a></p>
+      </div>
     </div>
   </div>
 </section>
