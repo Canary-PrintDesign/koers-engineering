@@ -1,40 +1,37 @@
-.hero--solid {
-  background-color: $color-blue;
-  height: 100vh;
-  padding-top: 100px;
-  max-height: 384px;
-  @include flex-center;
+.contact .feature__wrapper {
+  display: flex;
+  @include flex-column-to-row($bp-tablet);
+
+  > div {
+    @include flex-half;
+  }
 }
 
-.contact--wrapper {
-  @include screen($bp-phone) {
-    flex-direction: column-reverse;
-  }
+.contact__map {
+  height: 50vh;
+  width: 100%;
+  @include margin-bottom(20px);
 
   @include screen($bp-tablet) {
-    flex-direction: column;
+    @include margin-bottom(0);
   }
 }
 
-.contact--details,
-.contact--map {
-  @include screen($bp-phone) {
-    height: 400px;
-    flex-direction: row-reverse;
-    @include padding($gutter--xl);
-  }
-
+.contact__details {
   @include screen($bp-tablet) {
-    width: 50%;
-    max-width: 50%;
+    @include padding-horizontal(20px);
   }
 
-  @include screen($bp-desktop) {
-    height: 500px;
-    @include padding($gutter--huge);
+  > div:last-of-type {
+    @include margin-bottom(0);
   }
 }
 
-.contact--address {
-  white-space: pre;
+.contact__address,
+.contact__communication {
+  @include margin-bottom(10px);
+
+  > p {
+    @include margin-bottom(0);
+  }
 }
