@@ -1,6 +1,6 @@
 <div class="services-list feature__wrapper">
   <h1 class="services-list__title">{{ service.title }}</h1>
-  <p>{{ service.description }}</p>
+  <p class="services-list__copy">{{ service.description }}</p>
   {% for subservice in service.subservices %}
     {% if subservice[0] %}
       <div class="services-list-item">
