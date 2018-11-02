@@ -71,6 +71,8 @@
   }
 
   &__image-wrapper {
+    padding-top: 40px;
+
     @include screen($bp-tablet) {
       height: 0;
       max-width: 50%;

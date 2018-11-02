@@ -16,8 +16,8 @@ layout: default
   </div>
 </section>
 
-{% for paragraph in page.paragraphs %}
-  <section class="project-paragraph">
+<section class="project-paragraph">
+  {% for paragraph in page.paragraphs %}
     {% assign index = forloop.index + 1 | plus: 0 %}
     {% if page.images[index] %}
       <div class="project-paragraph__feature-wrapper">
@@ -33,8 +33,8 @@ layout: default
         <div>{{ paragraph }}</div>
       </div>
     {% endif %}
-  </section>
-{% endfor %}
+  {% endfor %}
+</section>
 
 <div>
   Construction Cost: {{ page["Construction Cost"] }}
