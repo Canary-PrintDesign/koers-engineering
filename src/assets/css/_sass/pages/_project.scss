@@ -58,3 +58,44 @@
   }
 }
 
+.project-paragraph {
+  max-width: 64em;
+  margin: auto;
+
+  &__feature-wrapper{
+    display: flex;
+    overflow: hidden;
+    @include padding(0);
+    @include flex-column-to-row($bp-tablet);
+    height: 300px;
+  }
+
+  &__image-wrapper {
+    @include screen($bp-tablet) {
+      height: 0;
+      max-width: 50%;
+    }
+
+    @include screen($bp-desktop) {
+      max-width: calc(100% / 3);
+    }
+  }
+
+  &__text {
+
+  }
+
+  &__wrapper,
+  &__text {
+    @include padding($gutter--large);
+
+    @include screen($bp-tablet) {
+      max-width: 50%;
+    }
+
+    @include screen($bp-desktop) {
+      max-width: calc(100% / 3 * 2);
+      @include padding($gutter--huge);
+    }
+  }
+}

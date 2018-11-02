@@ -17,19 +17,19 @@ layout: default
 </section>
 
 {% for paragraph in page.paragraphs %}
-  <section class="feature feature--secondary">
+  <section class="project-paragraph">
     {% assign index = forloop.index + 1 | plus: 0 %}
     {% if page.images[index] %}
-      <div className="feature__wrapper">
-        <div class="image-wrapper">
+      <div class="project-paragraph__feature-wrapper">
+        <div class="project-paragraph__image-wrapper">
           <img src="{{ page.images[index] }}" /> 
         </div>
-        <div class="content__wrapper">
+        <div class="project-paragraph__text">
           <div>{{ paragraph }}</div>
         </div>
       </div>
     {% else %}
-      <div className="project-paragraph__wrapper">
+      <div class="project-paragraph__wrapper">
         <div>{{ paragraph }}</div>
       </div>
     {% endif %}
