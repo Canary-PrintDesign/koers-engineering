@@ -1,0 +1,60 @@
+.project-hero {
+  position: relative;
+  background-color: $color-blue;
+  background-size: cover;
+  height: 100vh;
+  max-height: 379px;
+  @include flex-center;
+  border-bottom: 2px solid $color-yellow;
+
+  &__title {
+    text-align: center;
+    color: white;
+    @include margin-bottom($gutter--xl);
+    @include line-wrap;
+  }
+
+  small {
+    display: block;
+    text-transform: uppercase;
+    @include font-body;
+    @include margin-bottom($gutter--large);
+  }
+
+  &::after {
+    content: '';
+    height: 20px;
+    width: 100%;
+    background-color: $color-grey--lighter;
+    position: absolute;
+    bottom: 0;
+  }
+}
+
+.project-feature {
+  position: relative;
+
+  .feature__wrapper {
+    margin-top: -160px;
+  }
+
+  &__image-container {
+    display: flex;
+    justify-content: center;
+
+    img {
+      padding: 20px;
+      background-color: $color-grey--lighter;
+      max-width: 790px;
+    }
+  }
+
+  &__hidden-border {
+    background-color: $color-yellow;
+    width: 794px;
+    height: 542px;
+    position: absolute;
+    z-index: -1;
+  }
+}
+
