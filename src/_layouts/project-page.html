@@ -10,7 +10,7 @@ layout: default
 <section class="feature project-feature">
   <div class="feature__wrapper">
     <div class="project-feature__image-container">
-      <img src="{{ page.images[0] }}" /> 
+      <img src="{{ page.images[0] }}" />
       <div class="project-feature__hidden-border" />
     </div>
   </div>
@@ -21,16 +21,26 @@ layout: default
     {% assign index = forloop.index + 1 | plus: 0 %}
     {% if page.images[index] %}
       <div class="project-paragraph__feature-wrapper">
-        <div class="project-paragraph__image-wrapper">
-          <img src="{{ page.images[index] }}" /> 
-        </div>
-        <div class="project-paragraph__text">
-          <div>{{ paragraph }}</div>
-        </div>
+        {% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
+        {% if thecycle == 'odd' %}
+          <div class="project-paragraph__image-wrapper">
+            <img src="{{ page.images[index] }}" />
+          </div>
+          <div class="project-paragraph__text">
+            <div>{{ paragraph }}</div>
+          </div>
+        {% else %}
+          <div class="project-paragraph__text right-align">
+            <div>{{ paragraph }}</div>
+          </div>
+          <div class="project-paragraph__image-wrapper">
+            <img src="{{ page.images[index] }}" />
+          </div>
+        {% endif %}
       </div>
     {% else %}
       <div class="project-paragraph__wrapper">
-        <div>{{ paragraph }}</div>
+        {{ paragraph }}
       </div>
     {% endif %}
   {% endfor %}

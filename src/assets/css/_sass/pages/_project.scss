@@ -32,6 +32,7 @@
 
 .project-feature {
   position: relative;
+  padding-bottom: 40px;
 
   .feature__wrapper {
     margin-top: -160px;
@@ -84,12 +85,9 @@
   }
 
   &__text {
-
-  }
-
-  &__wrapper,
-  &__text {
     @include padding($gutter--large);
+    display: flex;
+    align-items: center;
 
     @include screen($bp-tablet) {
       max-width: 50%;
@@ -99,5 +97,17 @@
       max-width: calc(100% / 3 * 2);
       @include padding($gutter--huge);
     }
+  }
+
+  .right-align {
+    text-align: right;
+  }
+
+  &__wrapper {
+    @include padding($gutter--large);
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+    height: 180px;
   }
 }
