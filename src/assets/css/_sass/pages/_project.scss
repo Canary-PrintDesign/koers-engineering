@@ -3,22 +3,21 @@
   background-color: $color-blue;
   background-size: cover;
   height: 100vh;
-  max-height: 379px;
+  max-height: 485px;
   @include flex-center;
   border-bottom: 2px solid $color-yellow;
+  color: white;
 
   &__title {
     text-align: center;
-    color: white;
     @include margin-bottom($gutter--xl);
     @include line-wrap;
+    margin-bottom: 10px;
   }
 
-  small {
-    display: block;
-    text-transform: uppercase;
-    @include font-body;
-    @include margin-bottom($gutter--large);
+  p span {
+    margin-left: 10px; 
+    margin-right: 10px; 
   }
 
   &::after {
@@ -45,14 +44,15 @@
     img {
       padding: 20px;
       background-color: $color-grey--lighter;
-      max-width: 790px;
+      max-width: 740px;
+      max-height: 506.7px;
     }
   }
 
   &__hidden-border {
     background-color: $color-yellow;
-    width: 794px;
-    height: 542px;
+    width: 744px;
+    height: 508.7px;
     position: absolute;
     z-index: -1;
   }

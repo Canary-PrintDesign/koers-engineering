@@ -3,9 +3,9 @@ location: City of Port Alberni
 'Construction Cost': $2,500,000
 'Project Completion': 2017
 images:
-  - //placehold.it/500x700
-  - //placehold.it/300x500
-  - //placehold.it/200x400
+  - //placehold.it/750x500
+  - //placehold.it/750x500
+  - //placehold.it/750x500
 paragraphs:
   - The community of Bamfield is located on the west coast of Vancouver Island at the southern entrance to Barkley Sound and to the north of picturesque Pachena Bay;  the north entrance to the world renowned West Coast Trail.  The community water system was constructed in 1980 with Sugwaw Lake, located approximately 3 kms to the northeast, as the source and services the approximately 190 permanent residences, businesses and tourists.
   - In 2012, the Alberni-Clayoquot Regional District retained Koers & Associates to undertake a Water System Study, which included a review of water treatment options to meet the Vancouver Island Health Authority’s Drinking Water Treatment Objectives (Microbiological) for Surface Water Supplies in BC.

@@ -3,7 +3,7 @@ location: District of Ucluelet
 'Construction Cost': $1,000,000
 'Project Completion': 2017
 images:
-  - //placehold.it/500x700
+  - //placehold.it/750x500
 paragraphs:
   - The District of Ucluelet operates a 4-cell aerated sewage lagoon located on Hyphocus Island at the southern tip of the District.  Constructed in 1984, the lagoon services the 1,700 residences and businesses of Ucluelet and receives septage from the surrounding area.
   - In June 2016, seepage was found along the toe of the bank below cell no. 1.  Koers was retained by the District to assist with implementing emergency measures to address the problem.  This was followed by  an assessment of the condition of each cell; a review of repair and upgrading options, selection of the preferred option; preparation of detailed design drawings; obtaining regulatory agency approvals; tendering; construction management and commissioning.

@@ -3,18 +3,39 @@ layout: default
 ---
 
 <section class="project-hero">
-  <h1 class="project-hero__title">Project Name Here</h1>
+  <h1 class="project-hero__title">{{ page.title }}</h1>
+  <p>{{ page.location }} <span>|</span> Completed {{ page["Project Completion"] }}</p>
 </section>
 
 <section class="feature project-feature">
   <div class="feature__wrapper">
     <div class="project-feature__image-container">
-      <img src="//placehold.it/750x500" /> 
+      <img src="{{ page.images[0] }}" /> 
       <div class="project-feature__hidden-border" />
     </div>
   </div>
 </section>
 
-<section className="">
-  Product Page
-</section>
+{% for paragraph in page.paragraphs %}
+  <section class="feature feature--secondary">
+    {% assign index = forloop.index + 1 | plus: 0 %}
+    {% if page.images[index] %}
+      <div className="feature__wrapper">
+        <div class="image-wrapper">
+          <img src="{{ page.images[index] }}" /> 
+        </div>
+        <div class="content__wrapper">
+          <div>{{ paragraph }}</div>
+        </div>
+      </div>
+    {% else %}
+      <div className="project-paragraph__wrapper">
+        <div>{{ paragraph }}</div>
+      </div>
+    {% endif %}
+  </section>
+{% endfor %}
+
+<div>
+  Construction Cost: {{ page["Construction Cost"] }}
+</div>
