@@ -12,4 +12,5 @@ paragraphs:
 image: //placehold.it/750x500
 tags:
   - something
+order: 100
 ---

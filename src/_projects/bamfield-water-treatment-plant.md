@@ -13,4 +13,5 @@ paragraphs:
   - The preliminary design process commenced in the fall of 2016 and followed by detailed design commencing in the spring of 2017.  Due to the long lead time required for the manufacturing of DAF equipment, it was pre-purchased by the Alberni-Clayoqout Regional District.  Construction commenced in November 2017 and followed by commissioning in June 2018.
   - The water treatment process consists of Dissolved Air Floatation, followed by Rapid Gravity Media Filtration, and disinfection by UV and chlorine (sodium hypochlorite).  The plant has a rated treatment capacity ranging from 310 m3/day to 625 m3/day.
   - Koers managed the project from the feasibility study, through preliminary design, water treatment equipment pilot testing, detailed design obtaining regulatory approvals (Island Health and Ministry of Transportation & Infrastructure), tendering, construction, and commissioning.  Koers was the lead consultant co-ordinating the activities of the specialist sub-consultants (structural, electrical, and geotechnical) and pilot testing equipment suppliers/operators.
+order: 10
 ---

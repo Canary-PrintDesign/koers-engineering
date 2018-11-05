@@ -1,5 +1,7 @@
+{% assign sortedProjects = site.projects | sort: 'order' | reverse %}
+
 <div class="projects-list">
-  {% for project in site.projects %}
+  {% for project in sortedProjects %}
     {% include components/project-thumbnail.html project=project %}
   {% endfor %}
 </div>
