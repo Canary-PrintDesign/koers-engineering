@@ -62,14 +62,24 @@
 .project-paragraph {
   max-width: 64em;
   margin: auto;
-  padding-bottom: 60px;
+  padding-bottom: $gutter--huge;
 
   &__feature-wrapper{
     display: flex;
     overflow: hidden;
-    @include padding(0);
+    @include padding-vertical(0);
+    @include padding-horizontal($gutter--huge);
     @include flex-column-to-row($bp-tablet);
     height: 300px;
+  }
+
+  &__wrapper {
+    @include padding-vertical($gutter--xl);
+    @include padding-horizontal($gutter--huge);
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+    height: auto;
   }
 
   &__image-wrapper {
@@ -86,7 +96,6 @@
   }
 
   &__text {
-    @include padding($gutter--large);
     display: flex;
     align-items: center;
 
@@ -96,21 +105,28 @@
 
     @include screen($bp-desktop) {
       max-width: calc(100% / 3 * 2);
-      @include padding($gutter--huge);
+
+      &:nth-child(even) {
+        @include padding-left($gutter--huge);
+      }
+      &:nth-child(odd) {
+        @include padding-right($gutter--huge);
+      }
     }
   }
 
   .right-align {
     text-align: right;
   }
+}
 
-  &__wrapper {
-    @include padding($gutter--large);
-    display: flex;
-    align-items: center;
-    max-width: 100%;
-    height: 180px;
-  }
+.construction-cost-paragraph {
+  @include padding-top($gutter--huge);
+  @include padding-bottom($gutter--huge);
+  color: white;
+  background: $color-blue;
+  @include arrow;
+  border-bottom: 2px solid $color-yellow;
 }
 
 .construction-cost {
@@ -125,5 +141,16 @@
 
   &__number {
     font-size: 2.2em;
+  }
+}
+
+.feature .project-cta {
+  @include padding($gutter--huge);
+  display: flex;
+  flex-flow: column;
+  text-align: center;
+
+  h1, p {
+    @include padding($gutter--large);
   }
 }
