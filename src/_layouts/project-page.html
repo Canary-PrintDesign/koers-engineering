@@ -1,6 +1,7 @@
 ---
 layout: default
 ---
+{% assign ProjectImagesPath = "/assets/images/projects" %}
 
 <section class="project-hero">
   <h1 class="project-hero__title">{{ page.title }}</h1>
@@ -10,7 +11,7 @@ layout: default
 <section class="feature project-feature">
   <div class="feature__wrapper">
     <div class="project-feature__image-container">
-      <img src="/assets/images/projects/{{ page.slug }}/thumbnail.jpg" />
+      <img src="{{ProjectImagesPath}}/{{ page.slug }}/thumbnail.jpg" />
       <div class="project-feature__hidden-border" />
     </div>
   </div>
@@ -21,9 +22,10 @@ layout: default
     {% if forloop.index <= 3 %}
       <div class="project-paragraph__feature-wrapper">
         {% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
+        {% capture ImagePath %}{{ ProjectImagesPath }}/{{ page.slug }}/image{{ forloop.index }}.jpg{% endcapture %}
         {% if thecycle == 'odd' %}
           <div class="project-paragraph__image-wrapper">
-            <img src="/assets/images/projects/{{ page.slug }}/image{{ forloop.index }}.jpg" />
+            <img src={{ ImagePath }} />
           </div>
           <div class="project-paragraph__text">
             <div>{{ paragraph }}</div>
@@ -33,7 +35,7 @@ layout: default
             <div>{{ paragraph }}</div>
           </div>
           <div class="project-paragraph__image-wrapper">
-            <img src="/assets/images/projects/{{ page.slug }}/image{{ forloop.index }}.jpg" />
+            <img src={{ ImagePath }} />
           </div>
         {% endif %}
       </div>
