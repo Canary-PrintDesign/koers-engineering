@@ -24,12 +24,12 @@ layout: default
         {% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
         {% capture ImagePath %}{{ ProjectImagesPath }}/{{ page.slug }}/image{{ forloop.index }}.jpg{% endcapture %}
         <div>
-        <img src={{ ImagePath }} />
+          <img src={{ ImagePath }} />
         </div>
         <div class="project-paragraph__text{% if thecycle == 'even' %}__inverted{% endif %}">
-        <div>
-          {{ paragraph }}
-        </div>
+          <div>
+            {{ paragraph }}
+          </div>
         </div>
       </div>
     {% else %}

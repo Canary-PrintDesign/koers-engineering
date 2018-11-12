@@ -71,6 +71,7 @@
     @include padding-horizontal($gutter--huge);
     @include flex-column-to-row($bp-tablet);
     height: 300px;
+    align-items: center;
   }
 
   &__wrapper {
@@ -105,11 +106,9 @@
 
     @include screen($bp-desktop) {
       max-width: calc(100% / 3 * 2);
+      @include padding-left($gutter--huge);
 
-      &:nth-child(even) {
-        @include padding-left($gutter--huge);
-      }
-      &:nth-child(odd) {
+      &__inverted {
         @include padding-right($gutter--huge);
       }
     }
@@ -155,3 +154,57 @@
     @include padding($gutter--large);
   }
 }
+
+.feature--secondary {
+  .feature__wrapper {
+    display: flex;
+    overflow: hidden;
+    @include padding(0);
+    @include flex-column-to-row($bp-tablet);
+    @include arrow;
+  }
+
+  .image-wrapper {
+    @include screen($bp-tablet) {
+      height: 0;
+      max-width: 50%;
+    }
+
+    @include screen($bp-desktop) {
+      max-width: calc(100% / 3);
+    }
+  }
+
+  .content__wrapper {
+    @include padding($gutter--large);
+
+    @include screen($bp-tablet) {
+      max-width: 50%;
+    }
+
+    @include screen($bp-desktop) {
+      max-width: calc(100% / 3 * 2);
+      @include padding($gutter--huge);
+    }
+  }
+}
+
+.feature {
+  color: $color-blue;
+
+  .feature__wrapper {
+    @include margin-center;
+    @include padding-vertical($gutter--xl);
+    @include wrapper-sizing;
+  }
+
+  .button {
+    @include screen($bp-desktop) {
+      white-space: nowrap;
+      display: inline-block;
+      margin-left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}
+
