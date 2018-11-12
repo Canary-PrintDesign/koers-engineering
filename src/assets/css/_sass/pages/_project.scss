@@ -113,10 +113,11 @@
         @include padding-right($gutter--huge);
       }
     }
-  }
 
-  .right-align {
-    text-align: right;
+    &__inverted {
+      order: -1;
+      text-align: right;
+    }
   }
 }
 

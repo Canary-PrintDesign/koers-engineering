@@ -23,21 +23,14 @@ layout: default
       <div class="project-paragraph__feature-wrapper">
         {% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
         {% capture ImagePath %}{{ ProjectImagesPath }}/{{ page.slug }}/image{{ forloop.index }}.jpg{% endcapture %}
-        {% if thecycle == 'odd' %}
-          <div class="project-paragraph__image-wrapper">
-            <img src={{ ImagePath }} />
-          </div>
-          <div class="project-paragraph__text">
-            <div>{{ paragraph }}</div>
-          </div>
-        {% else %}
-          <div class="project-paragraph__text right-align">
-            <div>{{ paragraph }}</div>
-          </div>
-          <div class="project-paragraph__image-wrapper">
-            <img src={{ ImagePath }} />
-          </div>
-        {% endif %}
+        <div>
+        <img src={{ ImagePath }} />
+        </div>
+        <div class="project-paragraph__text{% if thecycle == 'even' %}__inverted{% endif %}">
+        <div>
+          {{ paragraph }}
+        </div>
+        </div>
       </div>
     {% else %}
       <div class="project-paragraph__wrapper">
