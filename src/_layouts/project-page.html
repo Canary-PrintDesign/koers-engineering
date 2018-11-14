@@ -12,7 +12,7 @@ layout: default
 <section class="feature project-feature">
   <div class="feature__wrapper">
     <div class="project-feature__image-container">
-      <img src="{{ProjectImagesPath}}/{{ page.slug }}/thumbnail.jpg" />
+      <img src="{{ProjectImagesPath}}/{{ page.slug }}/main.jpg" />
       <div class="project-feature__hidden-border" />
     </div>
   </div>
@@ -23,7 +23,7 @@ layout: default
     {% if forloop.index <= 3 %}
       <div class="project-paragraph__feature-wrapper">
         {% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
-        {% capture ImagePath %}{{ ProjectImagesPath }}/{{ page.slug }}/image{{ forloop.index }}.jpg{% endcapture %}
+        {% capture ImagePath %}{{ ProjectImagesPath }}/{{ page.slug }}/{{ forloop.index }}.jpg{% endcapture %}
         <div>
           <img src={{ ImagePath }} />
         </div>
