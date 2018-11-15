@@ -1,13 +1,4 @@
-.services-wrapper {
-  @include wrapper-sizing;
-  @include margin-center;
-  @include padding-vertical($gutter--huge);
-}
-
-.services-list {
-  display: flex;
-  flex-flow: row wrap;
-
+.service {
   &__title {
     text-align: center;
     width: 100%;
@@ -18,44 +9,50 @@
     }
   }
 
-  &__copy {
-    @include padding-bottom($gutter--large);
+  p {
+    &:first-of-type {
+      @include padding-bottom($gutter--large);
+    }
   }
 }
 
-.services-list-item {
-  display: flex;
-  flex-flow: column nowrap;
-  width: 100%;
-
-  &__title {
-    text-align: center;
-    @include padding-vertical($gutter);
+.service__list {
+  @include screen($bp-tablet) {
+    display: grid;
+    grid-template-columns: repeat(2);
+    grid-template-rows: repeat(2);
+    grid-auto-flow: column;
+    grid-column-gap: $gutter--xl;
+    @include margin-bottom($gutter--xl);
   }
 
-  &__description {
-    text-align: justify;
-    @include padding-bottom($gutter--xl);
+  h4 {
+    text-align: center;
+    @include margin-bottom($gutter);
 
-    @include screen($bp-tablet) {
-      @include padding-horizontal($gutter--xl);
+    &:nth-of-type(2n+1) {
+      grid-column: 1 / 2;
+    }
+
+    &:nth-of-type(2n) {
+      grid-column: 2 / 2;
     }
   }
 
-  @include screen($bp-tablet) {
-    width: 50%;
+  p {
+    @include margin-bottom($gutter--xl);
+
+    &:nth-of-type(2n+1) {
+      grid-column: 1 / 2;
+    }
+
+    &:nth-of-type(2n) {
+      grid-column: 2 / 2;
+    }
+  }
+
+  ul {
+    @include columns(3);
+    list-style-position: inside;
   }
 }
-
-.services-list-item-stub {
-  width: 100%;
-
-  @include screen($bp-tablet) {
-    width: 50%;
-  }
-
-  @include screen($bp-desktop) {
-    width: 33%;
-  }
-}
-
