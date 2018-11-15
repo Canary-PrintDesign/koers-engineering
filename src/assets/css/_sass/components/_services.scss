@@ -1,0 +1,61 @@
+.services-wrapper {
+  @include wrapper-sizing;
+  @include margin-center;
+  @include padding-vertical($gutter--huge);
+}
+
+.services-list {
+  display: flex;
+  flex-flow: row wrap;
+
+  &__title {
+    text-align: center;
+    width: 100%;
+    @include padding-vertical($gutter--large);
+
+    &::after {
+      @include horizontal-rule;
+    }
+  }
+
+  &__copy {
+    @include padding-bottom($gutter--large);
+  }
+}
+
+.services-list-item {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 100%;
+
+  &__title {
+    text-align: center;
+    @include padding-vertical($gutter);
+  }
+
+  &__description {
+    text-align: justify;
+    @include padding-bottom($gutter--xl);
+
+    @include screen($bp-tablet) {
+      @include padding-horizontal($gutter--xl);
+    }
+  }
+
+  @include screen($bp-tablet) {
+    width: 50%;
+  }
+}
+
+.services-list-item-stub {
+  width: 100%;
+
+  @include screen($bp-tablet) {
+    width: 50%;
+  }
+
+  @include screen($bp-desktop) {
+    width: 33%;
+  }
+}
+

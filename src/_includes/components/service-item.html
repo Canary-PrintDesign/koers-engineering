@@ -1,0 +1,14 @@
+<div class="services-list feature__wrapper">
+  <h1 class="services-list__title">{{ service.title }}</h1>
+  <p class="services-list__copy">{{ service.description }}</p>
+  {% for subservice in service.subservices %}
+    {% if subservice[0] %}
+      <div class="services-list-item">
+        <h4 class="services-list-item__title">{{ subservice[0] }}</h4>
+        <div class="services-list-item__description">{{ subservice[1] }}</div>
+      </div>
+    {% else %}
+      <li class="services-list-item-stub">{{ subservice }}</li>
+    {% endif %}
+  {% endfor %}
+</div>
