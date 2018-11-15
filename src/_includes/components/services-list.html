@@ -1,7 +1,0 @@
-{% assign sorted_services = (site.services | sort: 'order') %}
-
-<div class="services-list">
-  {% for service in sorted_services %}
-    {% include components/service-item.html service=service %}
-  {% endfor %}
-</div>
