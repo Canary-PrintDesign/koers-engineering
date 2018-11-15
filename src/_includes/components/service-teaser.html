@@ -1,6 +1,8 @@
+{% assign excerpt = service.content | split: site.excerpt_separator %}
+
 <div class="service-teaser">
   <i class="icon icon--{{ service.icon }}"></i>
 
   <h2 class="service-teaser__title">{{ service.title }}</h2>
-  {{ service.description }}
+  {{ excerpt[0] }}
 </div>
