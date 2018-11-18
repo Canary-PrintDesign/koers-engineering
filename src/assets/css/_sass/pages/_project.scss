@@ -71,7 +71,7 @@
     @include padding-vertical(0);
     @include padding-horizontal($gutter--huge);
     @include flex-column-to-row($bp-tablet);
-    height: 300px;
+    height: auto;
     align-items: center;
     margin-bottom: 64px;
   }
@@ -90,7 +90,7 @@
   }
 
   &__text {
-    flex: 1 0;
+    flex: 2 0;
     display: flex;
     align-items: center;
 
