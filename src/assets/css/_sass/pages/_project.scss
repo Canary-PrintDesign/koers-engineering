@@ -67,11 +67,13 @@
   &__feature-wrapper{
     display: flex;
     overflow: hidden;
+    justify-content: center;
     @include padding-vertical(0);
     @include padding-horizontal($gutter--huge);
     @include flex-column-to-row($bp-tablet);
     height: 300px;
     align-items: center;
+    margin-bottom: 64px;
   }
 
   &__wrapper {
@@ -84,19 +86,11 @@
   }
 
   &__image-wrapper {
-    padding-top: 40px;
-
-    @include screen($bp-tablet) {
-      height: 0;
-      max-width: 50%;
-    }
-
-    @include screen($bp-desktop) {
-      max-width: calc(100% / 3);
-    }
+    flex: 1 0;
   }
 
   &__text {
+    flex: 1 0;
     display: flex;
     align-items: center;
 
@@ -116,6 +110,7 @@
     &__inverted {
       order: -1;
       text-align: right;
+      flex: 1 0;
     }
   }
 }
