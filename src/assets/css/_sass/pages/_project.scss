@@ -73,6 +73,10 @@
     height: auto;
     align-items: flex-start;
     @include margin-top($gutter--enormous);
+
+    &:last-child {
+      @include margin-bottom($gutter--huge);
+    }
   }
 
   &__wrapper {
@@ -93,7 +97,7 @@
     flex: 1 2 auto;
     display: flex;
     align-items: center;
-    @include padding-top($gutter--large);
+    @include padding-top($gutter);
 
     @include screen($bp-tablet) {
       max-width: 50%;
