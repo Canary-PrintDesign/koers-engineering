@@ -1,8 +1,9 @@
-{% capture classes %}
-  {% if include.collapsed == true %}project-thumbnail--collapsed{% endif %}
-{% endcapture %}
-
-<a href="/projects/{{ project.slug }}" class="project-thumbnail__link">
+<a
+  id={{project.slug}}
+  data-tags={{ project.tags | join: ',' }}
+  href="/projects/{{ project.slug }}"
+  class="project-thumbnail__link"
+>
   <div class="project-thumbnail {{ classes }}">
     <div class="project-thumbnail__image-wrapper">
       <img src="/assets/images/projects/{{ project.slug }}/thumbnail.jpg" />

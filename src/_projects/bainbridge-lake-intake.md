@@ -9,8 +9,5 @@ paragraphs:
   - Koers managed the project from conceptual design, to obtaining fisheries and environmental approvals, and overseeing construction and commissioning.
 tags:
   - water
-  - storm/sewer
-  - transportation
-  - land-development
 order: 1000
 ---

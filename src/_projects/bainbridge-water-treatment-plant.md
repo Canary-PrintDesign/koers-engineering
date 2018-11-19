@@ -9,8 +9,5 @@ paragraphs:
   - Koers was the lead consultant, managing the other design team professionals of Associated Engineering (structural, electrical, instrumentation and controls) and Levelton Consulting Services (geotechnical).
 tags:
   - water
-  - storm/sewer
-  - transportation
-  - land-development
 order: 1000
 ---

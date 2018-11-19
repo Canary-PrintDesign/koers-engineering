@@ -9,8 +9,5 @@ paragraphs:
   - To date, more than 3.5 kms of the 1300 mm diameter Wood Stave pipe have been replaced with 1200 mm diameter HDPE pipe.  The new main is buried except at several creek crossings; the longest of which is the 300 m section across the Holden Creek flats.
 tags:
   - water
-  - storm/sewer
-  - transportation
-  - land-development
 order: 1000
 ---

@@ -9,8 +9,5 @@ paragraphs:
   - Koers & Associates Engineering were the Civil Lead for the supply mains on the Associated Engineering project team.
 tags:
   - water
-  - storm/sewer
-  - transportation
-  - land-development
 order: 1000
 ---

@@ -10,8 +10,8 @@
 
 <div class="projects-filter">
   {% for tag in tags %}
-    <div class="projects-filter__tag">
-      {{ tag | strip | replace: '-', ' ' | upcase }}
-    </div>
+  <div class="projects-filter__tag" data-tag={{tag}}>
+    {{ tag | strip | replace: '-', ' ' | upcase }}
+  </div>
   {% endfor %}
 </div>
