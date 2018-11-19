@@ -10,8 +10,7 @@
   cursor: pointer;
   @include borders-vertical;
 
-  &--active {
+  &.selected {
     color: $color-yellow;
-    border-color: $color-yellow;
   }
 }
