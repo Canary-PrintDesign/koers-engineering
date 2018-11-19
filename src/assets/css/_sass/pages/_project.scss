@@ -32,7 +32,6 @@
 
 .project-feature {
   position: relative;
-  padding-bottom: 40px;
 
   .feature__wrapper {
     margin-top: -160px;
@@ -72,8 +71,8 @@
     @include padding-horizontal($gutter--huge);
     @include flex-column-to-row($bp-tablet);
     height: auto;
-    align-items: center;
-    margin-bottom: 64px;
+    align-items: flex-start;
+    @include margin-top($gutter--enormous);
   }
 
   &__wrapper {
@@ -90,9 +89,10 @@
   }
 
   &__text {
-    flex: 2 0;
+    flex: 1 0;
     display: flex;
     align-items: center;
+    @include padding-top($gutter--large);
 
     @include screen($bp-tablet) {
       max-width: 50%;
@@ -106,11 +106,20 @@
         @include padding-right($gutter--huge);
       }
     }
+  }
 
-    &__inverted {
-      order: -1;
-      text-align: right;
-      flex: 1 0;
+  .inverted {
+    flex: 1 0;
+    order: -1;
+    text-align: right;
+
+    @include screen($bp-desktop) {
+      max-width: calc(100% / 3 * 2);
+      @include padding-right($gutter--huge);
+
+      &__inverted {
+        @include padding-left($gutter--huge);
+      }
     }
   }
 }
