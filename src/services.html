@@ -16,7 +16,7 @@ class: services
 
 <section class="services feature">
   <div class="feature__wrapper">
-    {% assign sorted_services = (site.services | sort: 'order') %}
+    {% assign sorted_services = site.services | sort: 'order' %}
     {% for service in sorted_services %}
       <div class="service">
         <h1 class="service__title">{{ service.title }}</h1>
