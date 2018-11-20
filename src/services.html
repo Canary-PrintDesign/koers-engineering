@@ -14,8 +14,17 @@ class: services
   </div>
 </section>
 
-<section class="feature services-wrapper">
-  {% include components/services-list.html %}
+<section class="services feature">
+  <div class="feature__wrapper">
+    {% assign sorted_services = (site.services | sort: 'order') %}
+    {% for service in sorted_services %}
+      <div class="service">
+        <h1 class="service__title">{{ service.title }}</h1>
+
+        {{ service.content }}
+      </div>
+    {% endfor %}
+  </div>
 </section>
 
 <section class="feature feature--inverted feature--arrow">
