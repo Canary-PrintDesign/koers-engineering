@@ -1,9 +1,14 @@
 ---
-location: Port Alberni
-image: //placehold.it/500x700
-description: Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+location: Parksville, BC
+client: City of Parksville
+'Project Completion': 2016
+'Construction Cost': $5,000,000
+paragraphs:
+  - The City of Parksville upgraded the 2.1 km section of Temple Street within its municipal boundaries in two phases.  The work included the replacement of water, sanitary sewer, and storm drain utilities (mains and services connections); installation of streetlights; road reconstruction and widening with the addition of concrete barrier curb, gutter; traffic calming with the addition of corner bulbing, centre lane islands, and a traffic circle; dedicated bicycle lanes; and pedestrian safety improvements with the addition of sidewalks on both sides and dedicated crosswalks.
+  - Koers managed the project for both phases from preliminary design, assisting with public open houses, through detailed design, tendering, and construction management.
 tags:
-  - sanitary-sewage
-  - storm-water
-  - municipal-land-development
+  - water
+  - storm/sewer
+  - transportation
+order: 1000
 ---

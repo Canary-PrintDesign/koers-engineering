@@ -1,7 +1,15 @@
 # !- Content Details
 collections:
-  projects:
   services:
+  projects:
+    output: true
+defaults:
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      permalink: /projects/:path/
+      layout: project-page
 
 # !- Site Configuration
 url: "koers-eng.com" # primary url the website will reside at

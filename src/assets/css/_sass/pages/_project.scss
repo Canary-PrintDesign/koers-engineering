@@ -1,0 +1,165 @@
+.project-hero {
+  position: relative;
+  background-color: $color-blue;
+  background-size: cover;
+  height: 100vh;
+  max-height: 485px;
+  @include flex-center;
+  border-bottom: 2px solid $color-yellow;
+  color: white;
+
+  &__title {
+    text-align: center;
+    @include margin-bottom($gutter--xl);
+    @include line-wrap;
+    margin-bottom: 10px;
+  }
+
+  p span {
+    margin-left: 10px; 
+    margin-right: 10px; 
+  }
+
+  &::after {
+    content: '';
+    height: 20px;
+    width: 100%;
+    background-color: $color-grey--lighter;
+    position: absolute;
+    bottom: 0;
+  }
+}
+
+.project-feature {
+  position: relative;
+
+  .feature__wrapper {
+    margin-top: -160px;
+  }
+
+  &__image-container {
+    display: flex;
+    justify-content: center;
+
+    img {
+      padding: 20px;
+      background-color: $color-grey--lighter;
+      max-width: 740px;
+      max-height: 506.7px;
+    }
+  }
+
+  &__hidden-border {
+    background-color: $color-yellow;
+    width: 744px;
+    height: 508.7px;
+    position: absolute;
+    z-index: -1;
+  }
+}
+
+.project-paragraph {
+  max-width: 64em;
+  margin: auto;
+  padding-bottom: $gutter--huge;
+
+  &__feature-wrapper{
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+    @include padding-vertical(0);
+    @include padding-horizontal($gutter--huge);
+    @include flex-column-to-row($bp-tablet);
+    height: auto;
+    align-items: flex-start;
+    @include margin-top($gutter--enormous);
+
+    &:last-child {
+      @include margin-bottom($gutter--huge);
+    }
+  }
+
+  &__wrapper {
+    @include padding-vertical($gutter--xl);
+    @include padding-horizontal($gutter--huge);
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+    height: auto;
+  }
+
+  &__image-wrapper {
+    flex: 1 1 auto;
+    max-width: 50%;
+  }
+
+  &__text {
+    flex: 1 2 auto;
+    display: flex;
+    align-items: center;
+    @include padding-top($gutter);
+
+    @include screen($bp-tablet) {
+      max-width: 50%;
+    }
+
+    @include screen($bp-desktop) {
+      max-width: calc(100% / 3 * 2);
+      @include padding-left($gutter--huge);
+
+      &__inverted {
+        @include padding-right($gutter--huge);
+      }
+    }
+  }
+
+  .inverted {
+    order: -1;
+    text-align: right;
+
+    @include screen($bp-desktop) {
+      max-width: calc(100% / 3 * 2);
+      @include padding-right($gutter--huge);
+
+      &__inverted {
+        @include padding-left($gutter--huge);
+      }
+    }
+  }
+}
+
+.construction-cost-paragraph {
+  @include padding-top($gutter--huge);
+  @include padding-bottom($gutter--huge);
+  color: white;
+  background: $color-blue;
+  @include arrow;
+  border-bottom: 2px solid $color-yellow;
+}
+
+.construction-cost {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+
+  &__title {
+    font-size: 1.6em;
+  }
+
+  &__number {
+    font-size: 2.2em;
+  }
+}
+
+.feature .project-cta {
+  @include padding($gutter--huge);
+  display: flex;
+  flex-flow: column;
+  text-align: center;
+
+  h1, p {
+    @include padding($gutter--large);
+  }
+}
+

@@ -36,12 +36,21 @@
   }
 
   .project-thumbnail__title {
+    height: 65px;
     @include h3;
-  }
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
 
-  small {
-    display: block;
-    @include h4;
+    span {
+      display: block;
+      line-height: 1.2;
+    }
+
+    small {
+      display: block;
+      @include h4;
+    }
   }
 
   .project-thumbnail__description {

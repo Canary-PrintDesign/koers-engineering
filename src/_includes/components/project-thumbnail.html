@@ -1,11 +1,12 @@
-{% capture classes %}
-  {% if include.collapsed == true %}project-thumbnail--collapsed{% endif %}
-{% endcapture %}
-
-<a href="#" class="project-thumbnail__link">
+<a
+  id={{project.slug}}
+  data-tags={{ project.tags | join: ',' }}
+  href="/projects/{{ project.slug }}"
+  class="project-thumbnail__link"
+>
   <div class="project-thumbnail {{ classes }}">
     <div class="project-thumbnail__image-wrapper">
-      <img src="{{ project.image }}" />
+      <img src="/assets/images/projects/{{ project.slug }}/thumbnail.jpg" />
     </div>
 
     <div class="project-thumbnail__content">
@@ -17,7 +18,7 @@
       </h1>
 
       {% if include.collapsed != true %}
-        <p class="project-thumbnail__description">{{ project.description }}</p>
+        <p class="project-thumbnail__description">{{ project.paragraphs[0] }}</p>
       {% endif %}
     </div>
   </div>
