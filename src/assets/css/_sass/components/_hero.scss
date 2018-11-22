@@ -1,7 +1,8 @@
 .hero {
-  background-image: url(//placehold.it/1440x700);
+  background-image: url(../../assets/images/bainbridge-bg.jpg);
   background-position: center center;
-  background-size: cover cover;
+  background-size: cover;
+  background-repeat: no-repeat;
   height: 100vh;
   max-height: 768px;
   @include flex-center;

@@ -10,7 +10,7 @@ paragraphs:
 
   - The existing watermain that crossed under the creek bed was replaced with a new watermain in the pathway and overtop of the culvert, improving accessibility for the Town’s public work department staff.
 tags:
+  - storm/sewer
   - transportation
-  - land-development
 order: 1000
 ---
