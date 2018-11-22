@@ -1,5 +1,6 @@
 # !- Content Details
 collections:
+  services:
   projects:
     output: true
 defaults:
