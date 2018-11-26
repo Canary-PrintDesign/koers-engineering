@@ -1,25 +1,29 @@
-<a
-  id={{project.slug}}
-  data-tags={{ project.tags | join: ',' }}
-  href="/projects/{{ project.slug }}"
-  class="project-thumbnail__link"
->
-  <div class="project-thumbnail {{ classes }}">
-    <div class="project-thumbnail__image-wrapper">
-      <img src="/assets/images/projects/{{ project.slug }}/thumbnail.jpg" />
-    </div>
+{% if include.blank %}
+  <div class="project-thumbnail blank" />
+{% else %}
+  <a
+    id={{project.slug}}
+    data-tags={{ project.tags | join: ',' }}
+    href="/projects/{{ project.slug }}"
+    class="project-thumbnail__link"
+  >
+    <div class="project-thumbnail {{ classes }}">
+      <div class="project-thumbnail__image-wrapper">
+        <img src="/assets/images/projects/{{ project.slug }}/thumbnail.jpg" />
+      </div>
 
-    <div class="project-thumbnail__content">
-      <h1 class="project-thumbnail__title">
-        <span>
-          {{ project.title }}
-        </span>
-        <small>{{ project.location }}</small>
-      </h1>
+      <div class="project-thumbnail__content">
+        <h1 class="project-thumbnail__title">
+          <span>
+            {{ project.title }}
+          </span>
+          <small>{{ project.location }}</small>
+        </h1>
 
-      {% if include.collapsed != true %}
-        <p class="project-thumbnail__description">{{ project.paragraphs[0] | truncate: 240 }}</p>
-      {% endif %}
+        {% if include.collapsed != true %}
+          <p class="project-thumbnail__description">{{ project.paragraphs[0] | truncate: 240 }}</p>
+        {% endif %}
+      </div>
     </div>
-  </div>
-</a>
+  </a>
+{% endif %}
