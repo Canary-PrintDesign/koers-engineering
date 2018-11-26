@@ -1,19 +1,14 @@
+.page-projects main {
+  .hero {
+    background-image: url(../../assets/images/bainbridge-bg.jpg);
+  }
+}
+
 .projects-wrapper {
   @include wrapper-sizing;
   @include margin-center;
   @include padding-top($gutter--huge);
   @include padding-bottom($gutter--huge);
-}
-
-.projects-list {
-  display: flex;
-  flex-wrap: wrap;
-  @include flex-column-to-row($bp-tablet);
-
-  @include screen($bp-tablet) {
-    align-items: stretch;
-    @include flex-children-even(3, $gutter--large, space-between);
-  }
 }
 
 .projects-cta {

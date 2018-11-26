@@ -55,11 +55,10 @@
 @import '_sass/components/site-footer';
 @import '_sass/components/colophon';
 @import '_sass/components/feature';
-@import '_sass/components/projects';
 @import '_sass/components/projects-filter';
+@import '_sass/components/projects-list';
 @import '_sass/components/project-thumbnail';
 @import '_sass/components/service-teaser';
-@import '_sass/components/services';
 @import '_sass/components/hero';
 @import '_sass/components/site-nav';
 @import '_sass/components/site-header';
@@ -67,6 +66,8 @@
 // Pages
 @import '_sass/pages/contact';
 @import '_sass/pages/about';
+@import '_sass/pages/projects';
 @import '_sass/pages/project';
+@import '_sass/pages/services';
 
 // Trumps

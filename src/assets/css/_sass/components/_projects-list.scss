@@ -1,0 +1,10 @@
+.projects-list {
+  display: flex;
+  flex-wrap: wrap;
+  @include flex-column-to-row($bp-tablet);
+
+  @include screen($bp-tablet) {
+    align-items: stretch;
+    @include flex-children-even(3, $gutter--large, space-between);
+  }
+}

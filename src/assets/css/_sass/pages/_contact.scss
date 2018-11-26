@@ -1,3 +1,9 @@
+.page-contact main {
+  .hero {
+    background-image: url(../../assets/images/bainbridge-bg.jpg);
+  }
+}
+
 .contact .feature__wrapper {
   display: flex;
   @include flex-column-to-row($bp-tablet);
