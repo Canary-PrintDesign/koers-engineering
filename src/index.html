@@ -41,7 +41,9 @@ layout: default
 
     <div class="project-list">
       {% for project in site.projects %}
-        {% include components/project-thumbnail.html project=project collapsed=true %}
+        {% if forloop.index <= 3 %}
+          {% include components/project-thumbnail.html project=project collapsed=true %}
+        {% endif %}
       {% endfor %}
     </div>
 
