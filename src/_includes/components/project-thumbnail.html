@@ -18,7 +18,7 @@
       </h1>
 
       {% if include.collapsed != true %}
-        <p class="project-thumbnail__description">{{ project.paragraphs[0] }}</p>
+        <p class="project-thumbnail__description">{{ project.paragraphs[0] | truncate: 240 }}</p>
       {% endif %}
     </div>
   </div>
