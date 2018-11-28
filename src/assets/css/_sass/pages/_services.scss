@@ -24,41 +24,53 @@
 
 .service__list {
   @include screen($bp-tablet) {
-    display: grid;
-    grid-template-columns: repeat(2);
-    grid-template-rows: repeat(2);
-    grid-auto-flow: column;
-    grid-column-gap: $gutter--xl;
     @include margin-bottom($gutter--xl);
   }
 
   h4 {
     text-align: center;
     @include margin-bottom($gutter);
-
-    &:nth-of-type(2n+1) {
-      grid-column: 1 / 2;
-    }
-
-    &:nth-of-type(2n) {
-      grid-column: 2 / 2;
-    }
   }
 
   p {
     @include margin-bottom($gutter--xl);
 
-    &:nth-of-type(2n+1) {
-      grid-column: 1 / 2;
-    }
-
-    &:nth-of-type(2n) {
-      grid-column: 2 / 2;
-    }
   }
 
   ul {
     @include columns(3);
     list-style-position: inside;
+  }
+}
+
+.service__list--grid {
+  @include screen($bp-tablet) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: $gutter--xl;
+    grid-auto-flow: row;
+  }
+}
+
+.collapsible-item {
+  .collapsible-item__handle {
+    display: none;
+  }
+
+  .collapsible-item__label {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .collapsible-item__content {
+    max-height: 0;
+    margin: -1px;
+    overflow: hidden;
+    @include transition;
+  }
+
+  .collapsible-item__handle:checked ~ .collapsible-item__content {
+    max-height: 20em;
   }
 }
