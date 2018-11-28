@@ -4,7 +4,6 @@ icon: projects
 ---
 From inventory management to computer modelling, to feasibility studies to grant application assistance, Koers offers a wide range of project planning services.
 
-<section class="service__list">
 #### Asset Inventory Assessments
 Asset management requires an accurate inventory of assets. Sometimes this can be part of a master plan or its own exercise. We have the resources to collect, review and analyze record data, and conduct field investigations to compile an accurate summary of utility systems or road networks.
 
@@ -25,4 +24,3 @@ A feasibility study is used to assess if one or more suggested projects are appr
 
 #### Computer Modelling
 We provide computer modelling using licensed industry leading programs for water systems using WaterGems (by Bentley), and sanitary sewer and storm drainage systems using XP-SWMM (by XP Solutions). We are able to model entire municipal systems or individual locations and service areas. Computer modelling is an integral part of Master Planning and detailed engineering design assignments. Water modelling is often used to assess the ability of the water distribution system to maintain adequate service levels during peak hour demands and to provide appropriate and sustained fire-fighting flows in accordance with existing zoning and future (OCP) land-use conditions. Storm drainage modelling has been used to recreate historical rainfall events to verify eye witness reports and post event observations, and assess the performance of potential improvement options.
-</services>
