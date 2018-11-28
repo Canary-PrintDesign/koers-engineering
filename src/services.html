@@ -21,7 +21,11 @@ class: services
       <div class="service">
         <h1 class="service__title">{{ service.title }}</h1>
 
-        {{ service.content }}
+        {% if forloop.index == 1 %}
+          {% include components/collapsible-list.html content=service.content %}
+        {% else %}
+          {{ service.content }}
+        {% endif %}
       </div>
     {% endfor %}
   </div>

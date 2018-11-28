@@ -1,0 +1,22 @@
+{% assign content = include.content | split: site.excerpt_separator %}
+
+{{ content[0] }}
+
+<section class="service__list service__list--grid">
+{% for section in content %}
+  {% if forloop.index > 1 %}
+    {% assign content_block = section | split: "</h4>" %}
+    <div class="service-list__collapsible-item collapsible-item">
+      <input class="collapsible-item__handle" type="checkbox" id="service-list-{{ forloop.index }}">
+
+      <label class="collapsible-item__label" for="service-list-{{ forloop.index }}" >
+        {{ content_block[0] }}</h4>
+      </label>
+
+      <div class="collapsible-item__content">
+        {{ content_block[1] }}
+      </div>
+    </div>
+  {% endif %}
+{% endfor %}
+</section>
