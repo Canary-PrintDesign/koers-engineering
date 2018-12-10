@@ -1,4 +1,4 @@
-let currentTag;
+let currentTag = 'all';
 let lastRef;
 let projects = [];
 
@@ -38,7 +38,7 @@ function filterProjects() {
 
 const handleClickFactory = (tag, ref) => () => {
   if (currentTag === tag) {
-    currentTag = undefined;
+    currentTag = 'all';
     showAll();
     $(ref).removeClass('selected');
   } else {
@@ -54,17 +54,21 @@ const handleClickFactory = (tag, ref) => () => {
 };
 
 function main() {
+  // assign the filters and projects from DOM into local variables.
+  const filters = document.getElementsByClassName('projects-filter__tag');
+  const projectThumbnails = document.getElementsByClassName('project-thumbnail__link');
+
   // assign the click handlers to the filter buttons
-  for (const filterButton of document.getElementsByClassName('projects-filter__tag')) {
-    const filter = filterButton.getAttribute('data-tag');
-    filterButton.addEventListener('click', handleClickFactory(filter, filterButton));
+  for (let i = 0; i < filters.length; i += 1) {
+    const filter = filters[i].getAttribute('data-tag');
+    filters[i].addEventListener('click', handleClickFactory(filter, filters[i]));
   }
 
   // populate the projects global state object by reading the DOM
-  for (const project of document.getElementsByClassName('project-thumbnail__link')) {
+  for (let i = 0; i < projectThumbnails.length; i += 1) {
     projects.push({
-      el: project,
-      tags: project.getAttribute('data-tags').split(','),
+      el: projectThumbnails[i],
+      tags: projectThumbnails[i].getAttribute('data-tags').split(','),
       hidden: false,
     });
   }
