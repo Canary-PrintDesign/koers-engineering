@@ -25,23 +25,22 @@ asset-path: '/assets/images/projects'
 <section class="project-paragraph">
   {% for paragraph in page.paragraphs %}
     {% capture image-path %}{{ base-image-path }}/{{ forloop.index }}.jpg{% endcapture %}
+    {% assign has-image = nil %}
+    {% for static_file in site.static_files %}
+      {% if static_file.path == image-path %}
+        {% assign has-image = 'has-image' %}
+      {% endif %}
+    {% endfor %}
 
-    {% if forloop.index <= 3 %}
-      <div class="project-paragraph__feature-wrapper">
+    <div class="project-paragraph__feature-wrapper {{ has-image }}">
+      {% if has-image %}
         <div class="project-paragraph__image-wrapper">
           <img src={{ image-path }} />
         </div>
-        <div class="project-paragraph__text">
-          <div>
-            {{ paragraph }}
-          </div>
-        </div>
-      </div>
-    {% else %}
-      <div class="project-paragraph__wrapper">
-        {{ paragraph }}
-      </div>
-    {% endif %}
+      {% endif %}
+
+      <p class="project-paragraph__text">{{ paragraph }}</p>
+    </div>
   {% endfor %}
 </section>
 
