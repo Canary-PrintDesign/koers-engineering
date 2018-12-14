@@ -2,6 +2,7 @@
 layout: default
 image-path: '/assets/images/projects'
 ---
+{% capture image-path %}{{ layout.image-path }}/{{ page.slug }}{% endcapture %}
 
 <section class="project-hero">
   <h1 class="project-hero__title">{{ page.title }}</h1>
@@ -15,7 +16,7 @@ image-path: '/assets/images/projects'
 <section class="feature project-feature">
   <div class="feature__wrapper">
     <div class="project-feature__image-container">
-      <img src="{{layout.image-path}}/{{ page.slug }}/main.jpg" />
+      <img src="{{ image-path }}/main.jpg" />
       <div class="project-feature__hidden-border" />
     </div>
   </div>
@@ -23,9 +24,10 @@ image-path: '/assets/images/projects'
 
 <section class="project-paragraph">
   {% for paragraph in page.paragraphs %}
+    {% capture ImagePath %}{{ image-path }}/{{ forloop.index }}.jpg{% endcapture %}
+
     {% if forloop.index <= 3 %}
       <div class="project-paragraph__feature-wrapper">
-        {% capture ImagePath %}{{ layout.image-path }}/{{ page.slug }}/{{ forloop.index }}.jpg{% endcapture %}
         <div class="project-paragraph__image-wrapper">
           <img src={{ ImagePath }} />
         </div>
