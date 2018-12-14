@@ -78,15 +78,6 @@
     }
   }
 
-  &__wrapper {
-    @include padding-vertical($gutter--xl);
-    @include padding-horizontal($gutter--huge);
-    display: flex;
-    align-items: center;
-    max-width: 100%;
-    height: auto;
-  }
-
   &__image-wrapper {
     flex: 1 1 auto;
     max-width: 50%;
