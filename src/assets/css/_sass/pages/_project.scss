@@ -54,16 +54,7 @@
 }
 
 .project-information {
-  list-style: none;
-
-  li {
-    display: inline-block;
-
-    &:not(:last-of-type)::after {
-      content: '|';
-      @include margin-horizontal($gutter);
-    }
-  }
+  @include inline-list('|');
 }
 
 .project-paragraph {
