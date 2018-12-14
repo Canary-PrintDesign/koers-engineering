@@ -5,24 +5,17 @@ asset-path: '/assets/images/projects'
 {% capture base-image-path %}{{ layout.asset-path }}/{{ page.slug }}{% endcapture %}
 
 <section class="project-hero">
-  <h1 class="project-hero__title">{{ page.title }}</h1>
-  <ul class="project-information">
-    <li>{{ page.client }}</li>
-    <li>{{ page.location }}</li>
-    <li>Completed {{ page.completed }}</li>
-  </ul>
-</section>
-
-<section class="feature project-feature">
-  <div class="feature__wrapper">
-    <div class="project-feature__image-container">
-      <img src="{{ base-image-path }}/main.jpg" />
-      <div class="project-feature__hidden-border" />
-    </div>
+  <div class="project-hero__wrapper" style="background-image: url({{ base-image-path }}/main.jpg)">
+    <h1 class="project-hero__title">{{ page.title }}</h1>
+    <ul class="project-information">
+      <li>{{ page.client }}</li>
+      <li>{{ page.location }}</li>
+      <li>Completed {{ page.completed }}</li>
+    </ul>
   </div>
 </section>
 
-<section class="project-paragraph">
+<div class="project-body">
   {% for paragraph in page.paragraphs %}
     {% capture image-path %}{{ base-image-path }}/{{ forloop.index }}.jpg{% endcapture %}
     {% assign has-image = nil %}
@@ -32,25 +25,21 @@ asset-path: '/assets/images/projects'
       {% endif %}
     {% endfor %}
 
-    <div class="project-paragraph__feature-wrapper {{ has-image }}">
+    <section class="project-section {{ has-image }}">
+      <p>{{ paragraph }}</p>
+
       {% if has-image %}
-        <div class="project-paragraph__image-wrapper">
+        <div class="project-section__image-wrapper">
           <img src={{ image-path }} />
         </div>
       {% endif %}
-
-      <p class="project-paragraph__text">{{ paragraph }}</p>
-    </div>
+    </section>
   {% endfor %}
-</section>
+</div>
 
-<section class="construction-cost-paragraph">
-  <div class="construction-cost">
-    <span class="construction-cost__title">Construction Cost:</span>
-    <span class="construction-cost__number">{{ page.cost }}</span>
-  </div>
-</section>
+<dl class="construction-cost">
+  <dt>Construction Cost</dt>
+  <dd>{{ page.cost }}</dd>
+</dl>
 
-<section class="feature feature--secondary">
-  {% include components/project-cta.html %}
-</section>
+{% include components/project-cta.html %}
