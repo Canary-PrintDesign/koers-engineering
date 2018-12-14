@@ -3,6 +3,7 @@ layout: default
 asset-path: '/assets/images/projects'
 ---
 {% capture base-image-path %}{{ layout.asset-path }}/{{ page.slug }}{% endcapture %}
+{% assign content = page.content | split: site.excerpt_separator %}
 
 <section class="project-hero">
   <div class="project-hero__wrapper" style="background-image: url({{ base-image-path }}/main.jpg)">
@@ -16,7 +17,7 @@ asset-path: '/assets/images/projects'
 </section>
 
 <div class="project-body">
-  {% for paragraph in page.paragraphs %}
+  {% for paragraph in content %}
     {% capture image-path %}{{ base-image-path }}/{{ forloop.index }}.jpg{% endcapture %}
     {% assign has-image = nil %}
     {% for static_file in site.static_files %}
@@ -26,7 +27,7 @@ asset-path: '/assets/images/projects'
     {% endfor %}
 
     <section class="project-section {{ has-image }}">
-      <p>{{ paragraph }}</p>
+      {{ paragraph }}
 
       {% if has-image %}
         <div class="project-section__image-wrapper">
