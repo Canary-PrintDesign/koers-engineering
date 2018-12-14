@@ -5,7 +5,11 @@ image-path: '/assets/images/projects'
 
 <section class="project-hero">
   <h1 class="project-hero__title">{{ page.title }}</h1>
-  <p>{{ page.client }} <span>|</span> {{ page.location }} <span>|</span> Completed {{ page.completed }}</p>
+  <ul class="project-information">
+    <li>{{ page.client }}</li>
+    <li>{{ page.location }}</li>
+    <li>Completed {{ page.completed }}</li>
+  </ul>
 </section>
 
 <section class="feature project-feature">

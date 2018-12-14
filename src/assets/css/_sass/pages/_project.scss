@@ -15,11 +15,6 @@
     margin-bottom: 10px;
   }
 
-  p span {
-    margin-left: 10px;
-    margin-right: 10px;
-  }
-
   &::after {
     content: '';
     height: 20px;
@@ -55,6 +50,19 @@
     height: 481.7px;
     position: absolute;
     z-index: -1;
+  }
+}
+
+.project-information {
+  list-style: none;
+
+  li {
+    display: inline-block;
+
+    &:not(:last-of-type)::after {
+      content: '|';
+      @include margin-horizontal($gutter);
+    }
   }
 }
 
