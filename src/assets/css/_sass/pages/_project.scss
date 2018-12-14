@@ -16,8 +16,8 @@
   }
 
   p span {
-    margin-left: 10px; 
-    margin-right: 10px; 
+    margin-left: 10px;
+    margin-right: 10px;
   }
 
   &::after {
@@ -63,7 +63,7 @@
   margin: auto;
   padding-bottom: $gutter--huge;
 
-  &__feature-wrapper{
+  &__feature-wrapper {
     display: flex;
     overflow: hidden;
     justify-content: center;
