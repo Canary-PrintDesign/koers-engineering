@@ -106,24 +106,16 @@
     @include screen($bp-desktop) {
       max-width: calc(100% / 3 * 2);
       @include padding-left($gutter--huge);
-
-      &__inverted {
-        @include padding-right($gutter--huge);
-      }
     }
   }
 
-  .inverted {
+  &__feature-wrapper:nth-of-type(2n) .project-paragraph__text {
     order: -1;
     text-align: right;
 
     @include screen($bp-desktop) {
       max-width: calc(100% / 3 * 2);
       @include padding-right($gutter--huge);
-
-      &__inverted {
-        @include padding-left($gutter--huge);
-      }
     }
   }
 }
