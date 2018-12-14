@@ -5,7 +5,7 @@ layout: default
 
 <section class="project-hero">
   <h1 class="project-hero__title">{{ page.title }}</h1>
-  <p>{{ page.client }} <span>|</span> {{ page.location }} <span>|</span> Completed {{ page["Project Completion"] }}</p>
+  <p>{{ page.client }} <span>|</span> {{ page.location }} <span>|</span> Completed {{ page.completed }}</p>
 </section>
 
 <section class="feature project-feature">
@@ -43,7 +43,7 @@ layout: default
 <section class="construction-cost-paragraph">
   <div class="construction-cost">
     <span class="construction-cost__title">Construction Cost:</span>
-    <span class="construction-cost__number">{{ page["Construction Cost"] }}</span>
+    <span class="construction-cost__number">{{ page.cost }}</span>
   </div>
 </section>
 
