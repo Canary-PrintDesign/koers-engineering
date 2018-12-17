@@ -27,7 +27,7 @@
 
 .site-logo {
   font-size: 0;
-  @include icon--color($color-grey--lightest)
+  @include icon--color($color-grey--darkest)
   @include transition;
 
   @include screen($bp-desktop) {
@@ -50,10 +50,6 @@
     @include screen($bp-desktop) {
       @include margin-horizontal(0); // reset position
     }
-  }
-
-  @at-root .opaque #{&} {
-    @include icon--color($color-grey--darkest);
   }
 
   span {

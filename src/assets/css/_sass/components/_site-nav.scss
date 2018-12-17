@@ -30,16 +30,10 @@
   &:last-of-type {
     a {
       @include screen($bp-desktop) {
-        color: $color-yellow;
-        box-shadow: inset 0 0 0 1px currentColor; // create sizeless border
-        @include transition;
+        color: $color-grey--darkest;
+        background-color: $color-yellow;
+        box-shadow: inset 0 0 0 1px $color-yellow; // create sizeless border
         @include padding-horizontal(48px);
-
-        @at-root .opaque #{&} {
-          color: $color-grey--darkest;
-          background-color: $color-yellow;
-          box-shadow: inset 0 0 0 1px $color-yellow; // create sizeless border
-        }
       }
     }
   }
@@ -57,7 +51,7 @@
 
   @include screen($bp-desktop) {
     font-size: 16px;
-    color: $color-text--light;
+    color: $color-text--dark;
     font-weight: bold;
     text-transform: uppercase;
   }
