@@ -1,165 +1,99 @@
 .project-hero {
-  position: relative;
-  background-color: $color-blue;
-  background-size: cover;
+  color: $color-grey--lightest;
   height: 100vh;
-  max-height: 485px;
-  @include flex-center;
-  border-bottom: 2px solid $color-yellow;
-  color: white;
+  text-align: center;
+  text-shadow: 0 0 10px $color-text-shadow,
+               0 0 20px $color-text-shadow,
+               0 0 30px $color-text-shadow;
 
-  &__title {
+  @include screen($bp-tablet) {
+    max-height: 485px;
+  }
+
+  .project-hero__wrapper {
+    background-color: $color-blue;
+    background-image: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 100%;
+    @include flex-center;
+  }
+
+  .project-information {
+    list-style: none;
     text-align: center;
-    @include margin-bottom($gutter--xl);
-    @include line-wrap;
-    margin-bottom: 10px;
-  }
-
-  p span {
-    margin-left: 10px; 
-    margin-right: 10px; 
-  }
-
-  &::after {
-    content: '';
-    height: 20px;
-    width: 100%;
-    background-color: $color-grey--lighter;
-    position: absolute;
-    bottom: 0;
-  }
-}
-
-.project-feature {
-  position: relative;
-
-  .feature__wrapper {
-    margin-top: -160px;
-  }
-
-  &__image-container {
-    display: flex;
-    justify-content: center;
-
-    img {
-      padding: 20px;
-      background-color: $color-grey--lighter;
-      max-width: 740px;
-      max-height: 506.7px;
-    }
-  }
-
-  &__hidden-border {
-    background-color: $color-yellow;
-    width: 744px;
-    height: 481.7px;
-    position: absolute;
-    z-index: -1;
-  }
-}
-
-.project-paragraph {
-  max-width: 64em;
-  margin: auto;
-  padding-bottom: $gutter--huge;
-
-  &__feature-wrapper{
-    display: flex;
-    overflow: hidden;
-    justify-content: center;
-    @include padding-vertical(0);
-    @include padding-horizontal($gutter--huge);
-    @include flex-column-to-row($bp-tablet);
-    height: auto;
-    align-items: flex-start;
-    @include margin-top($gutter--enormous);
-
-    &:last-child {
-      @include margin-bottom($gutter--huge);
-    }
-  }
-
-  &__wrapper {
-    @include padding-vertical($gutter--xl);
-    @include padding-horizontal($gutter--huge);
-    display: flex;
-    align-items: center;
-    max-width: 100%;
-    height: auto;
-  }
-
-  &__image-wrapper {
-    flex: 1 1 auto;
-    max-width: 50%;
-  }
-
-  &__text {
-    flex: 1 2 auto;
-    display: flex;
-    align-items: center;
-    @include padding-top($gutter);
 
     @include screen($bp-tablet) {
-      max-width: 50%;
-    }
-
-    @include screen($bp-desktop) {
-      max-width: calc(100% / 3 * 2);
-      @include padding-left($gutter--huge);
-
-      &__inverted {
-        @include padding-right($gutter--huge);
-      }
-    }
-  }
-
-  .inverted {
-    order: -1;
-    text-align: right;
-
-    @include screen($bp-desktop) {
-      max-width: calc(100% / 3 * 2);
-      @include padding-right($gutter--huge);
-
-      &__inverted {
-        @include padding-left($gutter--huge);
-      }
+      @include inline-list('|');
     }
   }
 }
 
-.construction-cost-paragraph {
-  @include padding-top($gutter--huge);
-  @include padding-bottom($gutter--huge);
-  color: white;
-  background: $color-blue;
-  @include arrow;
-  border-bottom: 2px solid $color-yellow;
+.project-body {
+  @include margin-center;
+  @include padding-vertical($gutter--xl);
+  @include wrapper-sizing;
+}
+
+.project-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include flex-column-to-row($bp-desktop)
+  @include margin-bottom($gutter);
+
+  @include screen($bp-desktop) {
+    @include margin-bottom($gutter--huge);
+  }
+
+  &.has-image {
+    justify-content: space-between;
+  }
+
+  &.has-image > * {
+    @include screen($bp-desktop) {
+      @include flex-half($gutter--xl);
+    }
+  }
+
+  p {
+    max-width: 65ch;
+  }
+
+  &:nth-of-type(2n) {
+    p {
+      @include screen($bp-desktop) {
+        order: 2;
+      }
+    }
+  }
 }
 
 .construction-cost {
-  display: flex;
-  flex-flow: column;
-  justify-content: center;
-  align-items: center;
-
-  &__title {
-    font-size: 1.6em;
-  }
-
-  &__number {
-    font-size: 2.2em;
-  }
-}
-
-.feature .project-cta {
-  @include padding($gutter--huge);
-  display: flex;
-  flex-flow: column;
+  background-color: $color-blue;
+  color: $color-grey--lightest;
   text-align: center;
+  border-bottom: 2px solid $color-yellow;
+  @include padding-vertical($gutter--huge);
+  @include margin-bottom($gutter--xl);
+  @include flex-column;
+  @include arrow;
+  @include h2;
 
-  h1, p {
-    @include padding($gutter--large);
+  dd {
+    font-weight: bold;
   }
 }
 
+.project-cta {
+  text-align: center;
+  align-items: center;
+  @include flex-column;
+  @include margin-vertical($gutter--xl);
+  @include margin-center;
+  @include wrapper-sizing;
+
+  p {
+    max-width: 65ch;
+  }
+}
