@@ -58,3 +58,17 @@
 @mixin line-wrap {
   white-space: pre-line;
 }
+
+// Inline list with separator
+@mixin inline-list($separator: ' ') {
+  list-style: none;
+
+  li {
+    display: inline-block;
+
+    &:not(:last-of-type)::after {
+      content: '#{$separator}';
+      @include margin-horizontal($gutter);
+    }
+  }
+}

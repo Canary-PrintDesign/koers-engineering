@@ -53,14 +53,6 @@
       @include h4;
     }
   }
-
-  .project-thumbnail__description {
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
-    display: -webkit-box;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
 }
 
 .project-thumbnail--collapsed {

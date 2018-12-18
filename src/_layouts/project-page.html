@@ -1,56 +1,46 @@
 ---
 layout: default
+asset-path: '/assets/images/projects'
 ---
-{% assign ProjectImagesPath = "/assets/images/projects" %}
+{% capture base-image-path %}{{ layout.asset-path }}/{{ page.slug }}{% endcapture %}
+{% assign content = page.content | split: site.excerpt_separator %}
 
 <section class="project-hero">
-  <h1 class="project-hero__title">{{ page.title }}</h1>
-  <p>{{ page.client }} <span>|</span> {{ page.location }} <span>|</span> Completed {{ page["Project Completion"] }}</p>
-</section>
-
-<section class="feature project-feature">
-  <div class="feature__wrapper">
-    <div class="project-feature__image-container">
-      <img src="{{ProjectImagesPath}}/{{ page.slug }}/main.jpg" />
-      <div class="project-feature__hidden-border" />
-    </div>
+  <div class="project-hero__wrapper" style="background-image: url({{ base-image-path }}/main.jpg)">
+    <h1 class="project-hero__title">{{ page.title }}</h1>
+    <ul class="project-information">
+      <li>{{ page.client }}</li>
+      <li>{{ page.location }}</li>
+      <li>Completed {{ page.completed }}</li>
+    </ul>
   </div>
 </section>
 
-<section class="project-paragraph">
-  {% for paragraph in page.paragraphs %}
-    {% if forloop.index <= 3 %}
-      <div class="project-paragraph__feature-wrapper">
-        {% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
-        {% capture ImagePath %}{{ ProjectImagesPath }}/{{ page.slug }}/{{ forloop.index }}.jpg{% endcapture %}
-        <div class="project-paragraph__image-wrapper">
-          <img src={{ ImagePath }} />
+<div class="project-body">
+  {% for paragraph in content %}
+    {% capture image-path %}{{ base-image-path }}/{{ forloop.index }}.jpg{% endcapture %}
+    {% assign has-image = nil %}
+    {% for static_file in site.static_files %}
+      {% if static_file.path == image-path %}
+        {% assign has-image = 'has-image' %}
+      {% endif %}
+    {% endfor %}
+
+    <section class="project-section {{ has-image }}">
+      {{ paragraph }}
+
+      {% if has-image %}
+        <div class="project-section__image-wrapper">
+          <img src={{ image-path }} />
         </div>
-        <div class="project-paragraph__text {% if thecycle == 'even' %}inverted{% endif %}">
-          <div>
-            {{ paragraph }}
-          </div>
-        </div>
-      </div>
-    {% else %}
-      <div class="project-paragraph__wrapper">
-        {{ paragraph }}
-      </div>
-    {% endif %}
+      {% endif %}
+    </section>
   {% endfor %}
-</section>
+</div>
 
-<section class="construction-cost-paragraph">
-  <div class="construction-cost">
-    <span class="construction-cost__title">Construction Cost:</span>
-    <span class="construction-cost__number">{{ page["Construction Cost"] }}</span>
-  </div>
-</section>
+<dl class="construction-cost">
+  <dt>Construction Cost</dt>
+  <dd>{{ page.cost }}</dd>
+</dl>
 
-<section class="feature feature--secondary project-paragraph">
-  <div class="project-cta">
-    <h1 class="feature__title feature__title--highlight">All Projects</h3>
-    <p><strong>Koers & Associates Engineering Ltd.</strong> is proud of {{ page.title }}. See more completed projects like this on our projects page!</p>
-    <a href="/projects" class="button">View All Projects</a>
-  </div>
-</section>
+{% include components/project-cta.html %}
