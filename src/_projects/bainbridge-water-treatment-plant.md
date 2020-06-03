@@ -1,8 +1,8 @@
 ---
+location: Port Alberni, BC
 client: City of Port Alberni
 completed: 2016
 cost: $3,300,000
-location: Port Alberni, BC
 order: 1000
 tags:
   - water

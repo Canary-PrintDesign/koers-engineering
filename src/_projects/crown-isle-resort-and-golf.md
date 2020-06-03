@@ -1,8 +1,8 @@
 ---
+location: Comox Valley, BC
 client: Silverado Land Corporation
 completed: 1991-2018+
 cost: Ongoing
-location: Comox Valley, BC
 order: 1000
 tags:
   - land-development

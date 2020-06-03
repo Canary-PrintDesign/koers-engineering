@@ -1,8 +1,8 @@
 ---
+location: South Nanaimo, BC
 client: City of Nanaimo
 completed: 2013
 cost: $8,800,000
-location: South Nanaimo
 order: 1000
 tags:
   - water

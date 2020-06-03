@@ -1,8 +1,8 @@
 ---
+location: South Nanaimo, BC
 client: Nanaimo Forest Products
 completed: 2018
 cost: N/A
-location: South Nanaimo
 order: 1000
 tags:
   - water

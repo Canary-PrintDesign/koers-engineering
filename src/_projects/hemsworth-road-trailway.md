@@ -1,5 +1,5 @@
 ---
-location: Qualicum Beach
+location: Qualicum Beach, BC
 client: Town of Qualicum Beach
 completed: 2018
 cost: $350,000

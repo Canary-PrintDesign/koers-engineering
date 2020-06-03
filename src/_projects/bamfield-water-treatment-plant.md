@@ -1,8 +1,8 @@
 ---
+location: Port Alberni, BC
 client: Alberni-Clayoquot Regional District
 cost: $2,500,000
 completed: 2018
-location: Port Alberni, BC
 order: 1000
 tags:
   - water
