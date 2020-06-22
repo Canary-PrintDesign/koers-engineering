@@ -6,10 +6,13 @@
 {% for section in content %}
   {% if forloop.index > 1 %}
     {% assign content_block = section | split: "</h4>" %}
-    <div class="service-list__collapsible-item collapsible-item">
-      <input class="collapsible-item__handle" type="checkbox" id="service-list-{{ forloop.index }}">
 
-      <label class="collapsible-item__label" for="service-list-{{ forloop.index }}">
+    {% assign content_id = content_block[0] | strip_html | replace: ' ', '_' %}
+
+    <div class="service-list__collapsible-item collapsible-item">
+      <input class="collapsible-item__handle" type="checkbox" id="service-list-{{ content_id }}">
+
+      <label class="collapsible-item__label" for="service-list-{{ content_id }}">
         <img class="collapsible-item__carat" src="/assets/icons/carat_facing_down.svg" alt=""/>
         {{ content_block[0] }}</h4>
       </label>
