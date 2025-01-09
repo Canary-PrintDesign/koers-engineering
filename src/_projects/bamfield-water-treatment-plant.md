@@ -1,5 +1,5 @@
 ---
-location: Port Alberni, BC
+location: Bamfield, BC
 client: Alberni-Clayoquot Regional District
 cost: $2,500,000
 completed: 2018

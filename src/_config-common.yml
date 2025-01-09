@@ -19,12 +19,12 @@ title-delimiter: " • " # Symbol to separate page title and site title. Include
 tagline: "Serving Vancouver Island's Infrastructure Needs Since 1987" # Website tagline
 license: "GNU GPL v3 http://www.gnu.org/licenses/gpl-3.0.en.html"
 copyright: "Koers & Associates Engineering LTD." # Will format out to "©{year} Example Site"
-webmaster: "info@example.com" # email address for master of website
+webmaster: "info@canaryprint.ca" # email address for master of website
 lang: "en_US" # base language for website
 logo: "/assets/site-logo.png"
 keywords: "Consulting engineering infrastructure municipal water resources land development" # Keywords to describe website
 description: "Koers & Associates Engineering Ltd. provides consulting engineering services in the municipal infrastructure, water resources, and land development fields." # Written description of website. Keep under 250 words if possible
-author: "" # Site Author
+author: "Canary Print + Design" # Site Author
 
 fonts: true
 # !- Publishing Information
