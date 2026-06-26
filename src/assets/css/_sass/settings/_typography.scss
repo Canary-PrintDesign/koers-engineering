@@ -1,3 +1,6 @@
+@use "../functions/functions";
+@use "fonts";
+
 /*
 
   Typography
@@ -6,8 +9,8 @@
 */
 
 $base-font-size: 16px;
-$global-font-size: -size($base-font-size);
-$global-line-height: -size($base-font-size * 1.5);
+$global-font-size: functions.size($base-font-size);
+$global-line-height: functions.size($base-font-size * 1.5);
 $global-font-smoothing: false !default;
 $global-type-legible: false !default;
 $global-measure: 65ch !default;
@@ -15,7 +18,7 @@ $global-measure: 65ch !default;
 // Define font stacks here
 //       'Fira-Mono', Hasklig, $monospace-stack
 $fonts: (
-  body: "Lato, #{$helvetica-stack}",
-  display: "Libre Baskerville, #{$times-stack}",
-  mono: "#{$monospace-stack}",
+  body: "Lato, #{fonts.$helvetica-stack}",
+  display: "Libre Baskerville, #{fonts.$times-stack}",
+  mono: "#{fonts.$monospace-stack}",
 );

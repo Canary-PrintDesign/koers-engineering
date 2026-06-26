@@ -1,3 +1,6 @@
+@use "sass:map";
+@use "../settings/typography";
+
 /*
 
   Fonts
@@ -21,7 +24,7 @@
 }
 
 @mixin font($type) {
-  @if map-has-key($fonts, $type) {
-    font-family: #{map-get($fonts, $type)};
+  @if map.has-key(typography.$fonts, $type) {
+    font-family: #{map.get(typography.$fonts, $type)};
   }
 }

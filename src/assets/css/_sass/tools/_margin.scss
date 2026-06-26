@@ -1,3 +1,5 @@
+@use "../functions/functions";
+
 /*
 
   Margin
@@ -8,19 +10,19 @@
 */
 
 @mixin margin-left($size) {
-  margin-left: -size($size);
+  margin-left: functions.size($size);
 }
 
 @mixin margin-right($size) {
-  margin-right: -size($size);
+  margin-right: functions.size($size);
 }
 
 @mixin margin-top($size) {
-  margin-top: -size($size);
+  margin-top: functions.size($size);
 }
 
 @mixin margin-bottom($size) {
-  margin-bottom: -size($size);
+  margin-bottom: functions.size($size);
 }
 
 @mixin margin-vertical($top, $bottom: null) {

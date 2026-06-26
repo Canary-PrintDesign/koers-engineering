@@ -8,7 +8,7 @@ class: services
     <h1 class="feature__title feature__title--highlight">Our Services</h1>
 
     <p>
-      <strong>Koers & Associates Engineering Ltd.</strong> projects comprise the full spectrum of municipal, residential,
+      <strong>Koers &amp; Associates Engineering Ltd.</strong> projects comprise the full spectrum of municipal, residential,
       commercial, industrial, and environmental infrastructure development and upgrading.
     </p>
   </div>
@@ -19,7 +19,7 @@ class: services
     {% assign sorted_services = site.services | sort: 'order' %}
     {% for service in sorted_services %}
       <div class="service">
-        <h1 class="service__title">{{ service.title }}</h1>
+        <h1 class="service__title">{{ service.title | escape }}</h1>
 
           {% include components/collapsible-list.html content=service.content %}
 

@@ -1,3 +1,8 @@
+@use "../objects/layout";
+@use "../settings/sizing";
+@use "../tools/center";
+@use "../tools/padding";
+
 .page-projects main {
   .hero {
     background-image: url(../../assets/images/projects-bg.jpg);
@@ -5,10 +10,10 @@
 }
 
 .projects-wrapper {
-  @include wrapper-sizing;
-  @include margin-center;
-  @include padding-top($gutter--huge);
-  @include padding-bottom($gutter--huge);
+  @include layout.wrapper-sizing;
+  @include center.margin-center;
+  @include padding.padding-top(sizing.$gutter--huge);
+  @include padding.padding-bottom(sizing.$gutter--huge);
 }
 
 .projects-cta {
@@ -16,6 +21,6 @@
   p {
     text-align: center;
     text-transform: none;
-    @include padding($gutter--large);
+    @include padding.padding(sizing.$gutter--large);
   }
 }

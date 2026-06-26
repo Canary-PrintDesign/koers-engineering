@@ -1,3 +1,8 @@
+@use "sass:list";
+@use "sass:string";
+@use "../functions/functions";
+@use "../settings/breakpoints";
+
 /*
 
   Font-Size
@@ -18,7 +23,7 @@
 // example h1 { @include font-size(16, 32, 64) }
 //   ouputs an h1 element that is 16px by default, 32px on a tablet, and 64px on a desktop
 @mixin font-size($default, $args...) {
-  $length: length($breakpoints);
+  $length: list.length(breakpoints.$breakpoints);
   $i: 1;
   $true: false;
   $filtered_args: ();
@@ -27,30 +32,30 @@
     @if ($var == true) {
       $true: true;
     } @else {
-      $filtered_args: append($filtered_args, $var);
+      $filtered_args: list.append($filtered_args, $var);
     }
   }
 
   @if ($true == true) {
-    font-size: unquote($default + "px");
+    font-size: string.unquote($default + "px");
   } @else {
-    font-size: -size($default);
+    font-size: functions.size($default);
   }
 
-  line-height: -multiple($default);
+  line-height: functions.multiple($default);
 
   @each $var in $filtered_args {
     @if ($length >= $i) {
-      $bp: nth(nth($breakpoints, $i), 2);
+      $bp: list.nth(list.nth(breakpoints.$breakpoints, $i), 2);
 
       @media screen and (min-width: $bp) {
         @if ($true == true) {
-          font-size: unquote($var + "px");
+          font-size: string.unquote($var + "px");
         } @else {
-          font-size: -size($var);
+          font-size: functions.size($var);
         }
 
-        line-height: -multiple($var);
+        line-height: functions.multiple($var);
       }
     }
 

@@ -1,3 +1,5 @@
+@use "../tools/typography";
+
 /*
 
   Addresses
@@ -5,5 +7,5 @@
 */
 
 [itemprop=streetAddress] {
-  @include line-break;
+  @include typography.line-break;
 }

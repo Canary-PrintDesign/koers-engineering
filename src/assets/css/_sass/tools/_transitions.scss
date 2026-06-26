@@ -1,3 +1,6 @@
+@use "sass:list";
+@use "../settings/core";
+
 /*
 
   Transitions
@@ -11,14 +14,14 @@
 */
 
 @mixin transition($properties...) {
-  $transition-properties: $global-transition-property;
+  $transition-properties: core.$global-transition-property;
 
-  @if length($properties) > 0 {
+  @if list.length($properties) > 0 {
     $transition-properties: $properties;
   }
 
-  transition-delay: $global-transition-delay;
-  transition-duration: $global-transition-duration;
+  transition-delay: core.$global-transition-delay;
+  transition-duration: core.$global-transition-duration;
   transition-property: $transition-properties;
-  transition-timing-function: $global-transition-timing-function;
+  transition-timing-function: core.$global-transition-timing-function;
 }

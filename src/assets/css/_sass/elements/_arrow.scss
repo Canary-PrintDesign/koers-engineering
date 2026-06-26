@@ -1,3 +1,7 @@
+@use "../settings/breakpoints";
+@use "../settings/sizing";
+@use "../tools/media";
+
 /*
 
   Arrow
@@ -8,7 +12,7 @@
   position: relative;
 
   &::after {
-    @include screen($bp-desktop) {
+    @include media.screen(breakpoints.$bp-desktop) {
       content: '';
       display: block;
       position: absolute;
@@ -16,7 +20,7 @@
       top: 0;
       transform: translateX(-50%);
       border-style: solid;
-      border-width: $gutter * 5;
+      border-width: sizing.$gutter * 5;
       border-color: currentColor transparent transparent;
     }
   }

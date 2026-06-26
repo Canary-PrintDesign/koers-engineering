@@ -1,3 +1,5 @@
+@use "../functions/functions";
+
 /*
 
   Padding
@@ -8,19 +10,19 @@
 */
 
 @mixin padding-left($size) {
-  padding-left: -size($size);
+  padding-left: functions.size($size);
 }
 
 @mixin padding-right($size) {
-  padding-right: -size($size);
+  padding-right: functions.size($size);
 }
 
 @mixin padding-top($size) {
-  padding-top: -size($size);
+  padding-top: functions.size($size);
 }
 
 @mixin padding-bottom($size) {
-  padding-bottom: -size($size);
+  padding-bottom: functions.size($size);
 }
 
 @mixin padding-vertical($top, $bottom: null) {

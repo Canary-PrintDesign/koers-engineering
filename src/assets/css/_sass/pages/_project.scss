@@ -1,49 +1,74 @@
+@use "../elements/arrow";
+@use "../objects/layout";
+@use "../settings/breakpoints";
+@use "../settings/colors";
+@use "../settings/sizing";
+@use "../tools/center";
+@use "../tools/flex";
+@use "../tools/font-size";
+@use "../tools/margin";
+@use "../tools/media";
+@use "../tools/padding";
+@use "../tools/typography";
+
 .project-hero {
-  color: $color-grey--lightest;
+  color: colors.$color-grey--lightest;
   height: 100vh;
   text-align: center;
-  text-shadow: 0 0 10px $color-text-shadow,
-               0 0 20px $color-text-shadow,
-               0 0 30px $color-text-shadow;
+  text-shadow: 0 0 10px colors.$color-text-shadow,
+               0 0 20px colors.$color-text-shadow,
+               0 0 30px colors.$color-text-shadow;
 
-  @include screen($bp-tablet) {
+  @include media.screen(breakpoints.$bp-tablet) {
     max-height: 485px;
   }
 
   .project-hero__wrapper {
-    background-color: $color-blue;
-    background-image: no-repeat;
-    background-size: cover;
-    background-position: center center;
+    background-color: colors.$color-blue;
     height: 100%;
-    @include flex-center;
+    position: relative;
+    overflow: hidden;
+    @include center.flex-center;
+
+    > :not(.project-hero__image) {
+      position: relative;
+      z-index: 1;
+    }
+  }
+
+  .project-hero__image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   .project-information {
     list-style: none;
     text-align: center;
 
-    @include screen($bp-tablet) {
-      @include inline-list('|');
+    @include media.screen(breakpoints.$bp-tablet) {
+      @include typography.inline-list('|');
     }
   }
 }
 
 .project-body {
-  @include margin-center;
-  @include padding-vertical($gutter--xl);
-  @include wrapper-sizing;
+  @include center.margin-center;
+  @include padding.padding-vertical(sizing.$gutter--xl);
+  @include layout.wrapper-sizing;
 }
 
 .project-section {
   display: flex;
   justify-content: center;
   align-items: center;
-  @include flex-column-to-row($bp-desktop);
-  @include margin-bottom($gutter);
+  @include flex.flex-column-to-row(breakpoints.$bp-desktop);
+  @include margin.margin-bottom(sizing.$gutter);
 
-  @include screen($bp-desktop) {
-    @include margin-bottom($gutter--huge);
+  @include media.screen(breakpoints.$bp-desktop) {
+    @include margin.margin-bottom(sizing.$gutter--huge);
   }
 
   &.has-image {
@@ -51,8 +76,8 @@
   }
 
   &.has-image > * {
-    @include screen($bp-desktop) {
-      @include flex-half($gutter--xl);
+    @include media.screen(breakpoints.$bp-desktop) {
+      @include flex.flex-half(sizing.$gutter--xl);
     }
   }
 
@@ -62,7 +87,7 @@
 
   &:nth-of-type(2n) {
     p {
-      @include screen($bp-desktop) {
+      @include media.screen(breakpoints.$bp-desktop) {
         order: 2;
       }
     }
@@ -70,15 +95,15 @@
 }
 
 .construction-cost {
-  background-color: $color-blue;
-  color: $color-grey--lightest;
+  background-color: colors.$color-blue;
+  color: colors.$color-grey--lightest;
   text-align: center;
-  border-bottom: 2px solid $color-yellow;
-  @include padding-vertical($gutter--huge);
-  @include margin-bottom($gutter--xl);
-  @include flex-column;
-  @include arrow;
-  @include h2;
+  border-bottom: 2px solid colors.$color-yellow;
+  @include padding.padding-vertical(sizing.$gutter--huge);
+  @include margin.margin-bottom(sizing.$gutter--xl);
+  @include flex.flex-column;
+  @include arrow.arrow;
+  @include font-size.h2;
 
   dd {
     font-weight: bold;
@@ -88,10 +113,10 @@
 .project-cta {
   text-align: center;
   align-items: center;
-  @include flex-column;
-  @include margin-vertical($gutter--xl);
-  @include margin-center;
-  @include wrapper-sizing;
+  @include flex.flex-column;
+  @include margin.margin-vertical(sizing.$gutter--xl);
+  @include center.margin-center;
+  @include layout.wrapper-sizing;
 
   p {
     max-width: 65ch;

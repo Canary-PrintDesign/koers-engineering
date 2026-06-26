@@ -1,14 +1,26 @@
+@use "../elements/arrow";
+@use "../elements/horizontal_rule";
+@use "../objects/layout";
+@use "../settings/breakpoints";
+@use "../settings/colors";
+@use "../settings/sizing";
+@use "../tools/center";
+@use "../tools/flex";
+@use "../tools/margin";
+@use "../tools/media";
+@use "../tools/padding";
+
 .feature {
-  color: $color-blue;
+  color: colors.$color-blue;
 
   .feature__wrapper {
-    @include margin-center;
-    @include padding-vertical($gutter--xl);
-    @include wrapper-sizing;
+    @include center.margin-center;
+    @include padding.padding-vertical(sizing.$gutter--xl);
+    @include layout.wrapper-sizing;
   }
 
   .button {
-    @include screen($bp-desktop) {
+    @include media.screen(breakpoints.$bp-desktop) {
       white-space: nowrap;
       display: inline-block;
       margin-left: 50%;
@@ -18,12 +30,12 @@
 }
 
 .feature--inverted {
-  background-color: $color-blue;
-  color: $color-text--light;
+  background-color: colors.$color-blue;
+  color: colors.$color-text--light;
 }
 
 .feature--flip .feature__wrapper {
-  @include screen($bp-tablet) {
+  @include media.screen(breakpoints.$bp-tablet) {
     flex-direction: row-reverse !important;
   }
 }
@@ -33,15 +45,15 @@
   text-align: center;
 
   &::after {
-    @include horizontal-rule;
-    @include margin-bottom($gutter--large);
+    @include horizontal_rule.horizontal-rule;
+    @include margin.margin-bottom(sizing.$gutter--large);
   }
 }
 
 .feature--arrow {
   .feature__wrapper {
-    @include padding($gutter--huge);
-    @include arrow;
+    @include padding.padding(sizing.$gutter--huge);
+    @include arrow.arrow;
   }
 }
 
@@ -49,32 +61,32 @@
   .feature__wrapper {
     display: flex;
     overflow: hidden;
-    @include padding(0);
-    @include flex-column-to-row($bp-tablet);
-    @include arrow;
+    @include padding.padding(0);
+    @include flex.flex-column-to-row(breakpoints.$bp-tablet);
+    @include arrow.arrow;
   }
 
   .image-wrapper {
-    @include screen($bp-tablet) {
+    @include media.screen(breakpoints.$bp-tablet) {
       height: 0;
       max-width: 50%;
     }
 
-    @include screen($bp-desktop) {
+    @include media.screen(breakpoints.$bp-desktop) {
       max-width: calc(100% / 3);
     }
   }
 
   .content__wrapper {
-    @include padding($gutter--large);
+    @include padding.padding(sizing.$gutter--large);
 
-    @include screen($bp-tablet) {
+    @include media.screen(breakpoints.$bp-tablet) {
       max-width: 50%;
     }
 
-    @include screen($bp-desktop) {
+    @include media.screen(breakpoints.$bp-desktop) {
       max-width: calc(100% / 3 * 2);
-      @include padding($gutter--huge);
+      @include padding.padding(sizing.$gutter--huge);
     }
   }
 
@@ -83,7 +95,7 @@
 
 .feature .service-list {
   display: flex;
-  @include flex-column-to-row($bp-tablet);
+  @include flex.flex-column-to-row(breakpoints.$bp-tablet);
 
   .service-teaser {
     display: flex;
@@ -95,11 +107,11 @@
 .feature .project-list {
   display: flex;
   flex-direction: column;
-  @include flex-column-to-row($bp-tablet);
+  @include flex.flex-column-to-row(breakpoints.$bp-tablet);
 
-  @include screen($bp-tablet) {
+  @include media.screen(breakpoints.$bp-tablet) {
     flex-grow: 1;
     justify-content: space-between;
-    @include flex-children-even(3, $gutter--large);
+    @include flex.flex-children-even(3, sizing.$gutter--large);
   }
 }

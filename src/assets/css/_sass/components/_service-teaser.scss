@@ -1,10 +1,13 @@
+@use "../settings/sizing";
+@use "../tools/margin";
+
 .service-teaser {
   text-align: center;
-  @include margin-bottom($gutter--xl);
+  @include margin.margin-bottom(sizing.$gutter--xl);
 
   .icon {
     display: block;
     font-size: 3em;
-    @include margin-bottom($gutter);
+    @include margin.margin-bottom(sizing.$gutter);
   }
 }

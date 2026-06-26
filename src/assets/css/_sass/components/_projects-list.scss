@@ -1,10 +1,15 @@
+@use "../settings/breakpoints";
+@use "../settings/sizing";
+@use "../tools/flex";
+@use "../tools/media";
+
 .projects-list {
   display: flex;
   flex-wrap: wrap;
-  @include flex-column-to-row($bp-tablet);
+  @include flex.flex-column-to-row(breakpoints.$bp-tablet);
 
-  @include screen($bp-tablet) {
+  @include media.screen(breakpoints.$bp-tablet) {
     align-items: stretch;
-    @include flex-children-even(3, $gutter--large, space-between);
+    @include flex.flex-children-even(3, sizing.$gutter--large, space-between);
   }
 }

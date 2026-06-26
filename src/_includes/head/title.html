@@ -1,1 +1,2 @@
-<title>{% include fragment/html-head_title.html %}</title>
+{% capture html_title %}{% include fragment/html-head_title.html %}{% endcapture %}
+<title>{{ html_title | strip | escape }}</title>

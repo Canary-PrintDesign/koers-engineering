@@ -1,3 +1,7 @@
+@use "sass:math";
+@use "../functions/functions";
+@use "core";
+
 /*
 
   Sizing
@@ -7,14 +11,14 @@
 */
 
 // Spacing values - created from the baseline
-$global-spacing-unit-micro:    -size($global-baseline / 8);
-$global-spacing-unit-tiny:     -size($global-baseline / 4);
-$global-spacing-unit-small:    -size($global-baseline / 2);
-$global-spacing-unit:          -size($global-baseline);
-$global-spacing-unit-large:    -size($global-baseline * 2);
-$global-spacing-unit-xl:       -size($global-baseline * 4);
-$global-spacing-unit-huge:     -size($global-baseline * 8);
-$global-spacing-unit-enormous: -size($global-baseline * 16);
+$global-spacing-unit-micro:    functions.size(math.div(core.$global-baseline, 8));
+$global-spacing-unit-tiny:     functions.size(math.div(core.$global-baseline, 4));
+$global-spacing-unit-small:    functions.size(math.div(core.$global-baseline, 2));
+$global-spacing-unit:          functions.size(core.$global-baseline);
+$global-spacing-unit-large:    functions.size(core.$global-baseline * 2);
+$global-spacing-unit-xl:       functions.size(core.$global-baseline * 4);
+$global-spacing-unit-huge:     functions.size(core.$global-baseline * 8);
+$global-spacing-unit-enormous: functions.size(core.$global-baseline * 16);
 
 // Gutters based on grid above
 $gutter--micro:    $global-spacing-unit-micro;
@@ -25,4 +29,3 @@ $gutter--large:    $global-spacing-unit-large;
 $gutter--xl:       $global-spacing-unit-xl;
 $gutter--huge:     $global-spacing-unit-huge;
 $gutter--enormous: $global-spacing-unit-enormous;
-

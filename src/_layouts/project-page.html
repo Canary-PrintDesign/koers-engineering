@@ -6,8 +6,9 @@ asset-path: '/assets/images/projects'
 {% assign content = page.content | split: site.excerpt_separator %}
 
 <section class="project-hero">
-  <div class="project-hero__wrapper" style="background-image: url({{ base-image-path }}/main.jpg)">
-    <h1 class="project-hero__title">{{ page.title }}</h1>
+  <div class="project-hero__wrapper">
+    <img class="project-hero__image" src="{{ base-image-path }}/main.jpg" alt="">
+    <h1 class="project-hero__title">{{ page.title | escape }}</h1>
     <ul class="project-information">
       <li>{{ page.client }}</li>
       <li>{{ page.location }}</li>
@@ -31,7 +32,7 @@ asset-path: '/assets/images/projects'
 
       {% if has-image %}
         <div class="project-section__image-wrapper">
-          <img src={{ image-path }} />
+          <img src="{{ image-path }}" alt="{{ page.title | escape }}">
         </div>
       {% endif %}
     </section>

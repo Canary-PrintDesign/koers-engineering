@@ -1,3 +1,5 @@
+@use "../settings/colors";
+
 /*
 
   Borders
@@ -6,6 +8,6 @@
 
 @mixin borders-vertical {
   border-style: solid;
-  border-color: $color-blue;
+  border-color: colors.$color-blue;
   border-width: 1px 0;
 }

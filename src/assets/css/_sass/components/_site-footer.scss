@@ -1,21 +1,28 @@
+@use "../objects/layout";
+@use "../settings/colors";
+@use "../settings/sizing";
+@use "../tools/center";
+@use "../tools/margin";
+@use "../tools/padding";
+
 .site-footer {
-  background-color: $color-blue--dark;
+  background-color: colors.$color-blue--dark;
 
   .site-footer__content-wrapper {
-    @include wrapper-sizing;
-    @include margin-center;
+    @include layout.wrapper-sizing;
+    @include center.margin-center;
   }
 }
 
 .site-copyright {
   text-align: center;
-  color: $color-grey--lightest-alpha;
-  @include padding-vertical($gutter);
+  color: colors.$color-grey--lightest-alpha;
+  @include padding.padding-vertical(sizing.$gutter);
 
   a {
-    color: $color-grey--lightest-alpha;
+    color: colors.$color-grey--lightest-alpha;
     font-style: italic;
     text-decoration: none;
-    @include margin($gutter);
+    @include margin.margin(sizing.$gutter);
   }
 }

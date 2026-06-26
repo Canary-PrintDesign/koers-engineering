@@ -1,3 +1,8 @@
+@use "../settings/colors";
+@use "../settings/sizing";
+@use "../tools/center";
+@use "../tools/padding";
+
 /*
 
   Horizontal Rule
@@ -7,8 +12,8 @@
 @mixin horizontal-rule {
   content: '';
   display: block;
-  width: $gutter--enormous;
-  border-bottom: 2px solid $color-yellow;
-  @include padding-bottom($gutter--large);
-  @include margin-center;
+  width: sizing.$gutter--enormous;
+  border-bottom: 2px solid colors.$color-yellow;
+  @include padding.padding-bottom(sizing.$gutter--large);
+  @include center.margin-center;
 }

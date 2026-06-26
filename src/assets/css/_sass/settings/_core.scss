@@ -1,3 +1,5 @@
+@use "../functions/functions";
+
 /*
 
   Core
@@ -24,9 +26,9 @@ $static-images: true !default;
 $z-site-header: 9;
 
 // Majors element sizes
-$size-header: -size(64px);
-$size-header--desktop: -size(80px);
-$size-site-nav: -size(88px);
+$size-header: functions.size(64px);
+$size-header--desktop: functions.size(80px);
+$size-site-nav: functions.size(88px);
 
 // Box Shadow Params
 $box-shadow-x: 0;

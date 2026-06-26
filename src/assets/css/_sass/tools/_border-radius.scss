@@ -1,3 +1,7 @@
+@use "sass:list";
+@use "../functions/functions";
+@use "../settings/core";
+
 /*
 
   Border Radius
@@ -14,12 +18,12 @@
 //
 // Example: button { @include border-radius(top-left, bottom-right) }
 @mixin border-radius($positions...) {
-  @if (length($positions) > 0) {
+  @if (list.length($positions) > 0) {
     @each $position in $positions  {
-      border-#{$position}-radius: $global-radius;
+      border-#{$position}-radius: core.$global-radius;
     }
   } @else {
-    border-radius: $global-radius;
+    border-radius: core.$global-radius;
   }
 }
 
@@ -33,11 +37,11 @@
 //
 // Example: button { @include border-radius(10px, top-left, bottom-right) }
 @mixin border-radius-size($size, $positions...) {
-  @if (length($positions) > 0) {
+  @if (list.length($positions) > 0) {
     @each $position in $positions  {
-      border-#{$position}-radius: -size($size);
+      border-#{$position}-radius: functions.size($size);
     }
   } @else {
-    border-radius: -size($size);
+    border-radius: functions.size($size);
   }
 }

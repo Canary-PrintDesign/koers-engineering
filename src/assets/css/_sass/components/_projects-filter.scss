@@ -1,16 +1,21 @@
+@use "../elements/borders";
+@use "../settings/colors";
+@use "../settings/sizing";
+@use "../tools/margin";
+
 .projects-filter {
   display: flex;
   flex-wrap: wrap;
-  @include margin-vertical($gutter--large);
+  @include margin.margin-vertical(sizing.$gutter--large);
 }
 
 .projects-filter__tag {
   text-align: center;
   flex-grow: 1;
   cursor: pointer;
-  @include borders-vertical;
+  @include borders.borders-vertical;
 
   &.selected {
-    color: $color-yellow;
+    color: colors.$color-yellow;
   }
 }

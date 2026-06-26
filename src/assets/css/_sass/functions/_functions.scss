@@ -1,3 +1,10 @@
+@use "sass:map";
+@use "sass:math";
+@use "sass:meta";
+@use "sass:string";
+
+$global-baseline: 8px !default;
+
 /*
 
   Functions
@@ -8,57 +15,56 @@
 
 // Remove unit suffix from a value
 @function -strip-units($number) {
-  @if type-of($number) == 'number' and not unitless($number) {
-    @return $number / ($number * 0 + 1);
+  @if meta.type-of($number) == 'number' and not math.is-unitless($number) {
+    @return math.div($number, ($number * 0 + 1));
   }
 
   @return $number;
 }
 
 // Return value nearest multiple of baseline
-@function -size($desired-value) {
+@function size($desired-value) {
   $baseline: $global-baseline;
-  @if ($desired-value <= ($baseline + ($baseline / 2))) {
+  @if ($desired-value <= ($baseline + math.div($baseline, 2))) {
     //@warn "#{$desired-value} is smaller than #{$baseline + ($baseline / 2)}, did you mean it?";
-    $baseline: $global-baseline / 4;
+    $baseline: math.div($global-baseline, 4);
   }
 
-  $value: round($desired-value / $baseline);
+  $value: math.round(math.div($desired-value, $baseline));
 
   $return-value: $value * $baseline;
 
-  @if (unitless($return-value)) {
+  @if (math.is-unitless($return-value)) {
     $return-value: $return-value + 'px';
   }
 
-  @if (type-of($return-value) != 'number') {
-    $return-value: unquote($return-value);
+  @if (meta.type-of($return-value) != 'number') {
+    $return-value: string.unquote($return-value);
   }
 
   @return $return-value;
 }
 
-@function -multiple($desired-value, $baseline: $global-baseline) {
+@function multiple($desired-value, $baseline: $global-baseline) {
   $s: -strip-units($desired-value);
   $b: -strip-units($baseline);
-  $m: $s / $b;
+  $m: math.div($s, $b);
   $M: 1;
 
   @if ($m % 1 == 0) {
     $M: $m + 1;
   } @else {
-    $M: ceil($m);
+    $M: math.ceil($m);
   }
 
   // 16px font, 24px baseline, 24 / 16 = 1.5
-  @return ($M * $b / $s);
+  @return math.div($M * $b, $s);
 }
 
-@function -color($color, $variant: base) {
-  @return map-get($color, $variant);
+@function color($color, $variant: base) {
+  @return map.get($color, $variant);
 }
 
-@function -shadow($x: null, $y: null, $blur: null, $spread: null, $color: null) {
-  @return unquote("#{$x} #{$y} #{$blur} #{$spread} #{$color}");
+@function shadow($x: null, $y: null, $blur: null, $spread: null, $color: null) {
+  @return string.unquote("#{$x} #{$y} #{$blur} #{$spread} #{$color}");
 }
-

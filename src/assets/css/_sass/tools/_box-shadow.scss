@@ -1,3 +1,8 @@
+@use "sass:list";
+@use "../functions/functions";
+@use "../settings/colors";
+@use "../settings/core";
+
 /*
 
   Box Shadow
@@ -17,22 +22,22 @@
 //
 // Example: aside { @include box-shadow($inset: true) }
 @mixin box-shadow(
-  $x: $box-shadow-x,
-  $y: $box-shadow-y,
-  $blur: $box-shadow-blur,
-  $spread: $box-shadow-spread,
-  $inset: $box-shadow-inset) {
+  $x: core.$box-shadow-x,
+  $y: core.$box-shadow-y,
+  $blur: core.$box-shadow-blur,
+  $spread: core.$box-shadow-spread,
+  $inset: core.$box-shadow-inset) {
     @if ($inset) { $inset: inset }
 
-    $color: $color-box-shadow;
+    $color: colors.$color-box-shadow;
     $shadow: (null,);
-    $spread-length: length($spread);
-    $blur-length: length($blur);
+    $spread-length: list.length($spread);
+    $blur-length: list.length($blur);
 
     @for $i from 1 through $blur-length {
       @for $n from 1 through $spread-length {
-        $val: $inset -shadow($x, $y, nth($blur, $i), nth($spread, $n), $color);
-        $shadow: append($shadow, $val);
+        $val: $inset functions.shadow($x, $y, list.nth($blur, $i), list.nth($spread, $n), $color);
+        $shadow: list.append($shadow, $val);
       }
     }
 

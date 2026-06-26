@@ -1,3 +1,8 @@
+@use "../settings/breakpoints";
+@use "../settings/sizing";
+@use "../tools/media";
+@use "../tools/padding";
+
 /*
 
   Layout
@@ -8,14 +13,14 @@
 
 @mixin wrapper-sizing {
   width: 100%;
-  @include padding-horizontal($gutter--large);
+  @include padding.padding-horizontal(sizing.$gutter--large);
 
-  @include screen($bp-tablet) {
-    max-width: $bp-tablet;
+  @include media.screen(breakpoints.$bp-tablet) {
+    max-width: breakpoints.$bp-tablet;
   }
 
-  @include screen($bp-desktop) {
-    max-width: $bp-desktop;
+  @include media.screen(breakpoints.$bp-desktop) {
+    max-width: breakpoints.$bp-desktop;
   }
 
   > *:last-child {

@@ -4,9 +4,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="page-datetime" content="{% if page.date-modified %}{{page.date-modified}}{% else if page.date-created %}{{page.date-created}}{% else %}{{site.time | date: "%Y-%m-%d"}}{% endif %}">
 <meta name="author" content="/humans.txt">
-<meta name="keywords" content="{{page.keywords}} {{site.keywords}}">
+<meta name="keywords" content="{{page.keywords | escape}} {{site.keywords | escape}}">
 <meta name="no-email-collection" content="/terms-of-service">
-<meta name="description" content="{{site.description}}">
+<meta name="description" content="{{site.description | escape}}">
 
 <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">

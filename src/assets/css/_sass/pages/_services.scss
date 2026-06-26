@@ -1,3 +1,14 @@
+@use "../elements/horizontal_rule";
+@use "../settings/breakpoints";
+@use "../settings/sizing";
+@use "../tools/margin";
+@use "../tools/media";
+@use "../tools/padding";
+@use "../tools/font-size";
+@use "../tools/fonts";
+@use "../tools/transitions";
+@use "../tools/typography";
+
 .page-services main {
   .hero {
     background-image: url(../../assets/images/services-bg.jpg);
@@ -8,46 +19,50 @@
   &__title {
     text-align: center;
     width: 100%;
-    @include padding-vertical($gutter--large);
+    @include padding.padding-vertical(sizing.$gutter--large);
 
     &::after {
-      @include horizontal-rule;
+      @include horizontal_rule.horizontal-rule;
     }
   }
 
   p {
     &:first-of-type {
-      @include padding-bottom($gutter--large);
+      @include padding.padding-bottom(sizing.$gutter--large);
     }
   }
 }
 
 .service__list {
-  @include screen($bp-tablet) {
-    @include margin-bottom($gutter--xl);
+  @include media.screen(breakpoints.$bp-tablet) {
+    @include margin.margin-bottom(sizing.$gutter--xl);
   }
 
-  h4 {
+  h4,
+  .collapsible-item__title {
     text-align: left;
-    @include margin-bottom($gutter);
+    text-transform: uppercase;
+    @include fonts.font-display;
+    @include font-size.h4;
+    @include margin.margin-bottom(sizing.$gutter);
   }
 
   p {
-    @include margin-bottom($gutter--xl);
+    @include margin.margin-bottom(sizing.$gutter--xl);
 
   }
 
   ul {
-    @include columns(3);
+    @include typography.columns(3);
     list-style-position: inside;
   }
 }
 
 .service__list--grid {
-  @include screen($bp-tablet) {
+  @include media.screen(breakpoints.$bp-tablet) {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-column-gap: $gutter--xl;
+    grid-column-gap: sizing.$gutter--xl;
     grid-auto-flow: row;
   }
 }
@@ -70,7 +85,7 @@
     max-height: 0;
     margin: -1px -1px -1px 26px;
     overflow: hidden;
-    @include transition;
+    @include transitions.transition;
   }
 
   .collapsible-item__handle:checked {
@@ -86,6 +101,6 @@
   .collapsible-item__carat {
     width: 16px;
     margin: 6px 9px 0 0;
-    @include transition;
+    @include transitions.transition;
   }
 }

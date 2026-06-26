@@ -1,3 +1,6 @@
+@use "sass:math";
+@use "../settings/breakpoints";
+
 /*
 
   Flex
@@ -16,7 +19,7 @@
 // $switch-point: breakpoint to change to row
 //
 // example: nav { @include flex-column-to-row(768px) }
-@mixin flex-column-to-row($switch-point: $bp-desktop) {
+@mixin flex-column-to-row($switch-point: breakpoints.$bp-desktop) {
   flex-direction: column;
 
   @media screen and (min-width: $switch-point) {
@@ -29,7 +32,7 @@
 // $switch-point: breakpoint to change to no wrap
 //
 // example: nav { @include flex-wrap-to-nowrap(768px) }
-@mixin flex-wrap-to-nowrap($switch-point: $bp-desktop) {
+@mixin flex-wrap-to-nowrap($switch-point: breakpoints.$bp-desktop) {
   flex-wrap: wrap;
 
   @media screen and (min-width: $switch-point) {
@@ -42,7 +45,7 @@
 // $switch-point: breakpoint to change to wrap
 //
 // example: nav { @include flex-nowrap-to-wrap(768px) }
-@mixin flex-nowrap-to-wrap($switch-point: $bp-desktop) {
+@mixin flex-nowrap-to-wrap($switch-point: breakpoints.$bp-desktop) {
   @media screen and (min-width: $switch-point) {
     flex-wrap: wrap;
   }
@@ -58,7 +61,7 @@
   $basis: 50%;
 
   @if ($space-between) {
-    $basis: calc(50% - #{$space-between / 2});
+    $basis: calc(50% - #{math.div($space-between, 2)});
   }
 
   flex-grow: 0;
@@ -73,7 +76,7 @@
 // example: .columned-layout p { @include flex-even(3, 10px) }
 //   will output 3 column layout with 10px spacing
 @mixin flex-even($count, $space-between: null) {
-  $basis: 100% / $count;
+  $basis: math.div(100%, $count);
 
   @if ($space-between) {
     $basis: calc((100% - #{$space-between * ($count - 1)}) / #{$count});
@@ -95,7 +98,7 @@
   $basis: 50%;
 
   @if ($space-between) {
-    $basis: calc(50% - #{$space-between / 2});
+    $basis: calc(50% - #{math.div($space-between, 2)});
   }
 
   > * {
@@ -118,7 +121,7 @@
 //
 // example header { display: flex; @include flex-children-even(10px, flex-end) }
 @mixin flex-children-even($count, $space-between: null, $justify-content: null) {
-  $basis: 100% / $count;
+  $basis: math.div(100%, $count);
 
   @if ($space-between) {
     $basis: calc((100% - #{$space-between * ($count - 1)}) / #{$count});
@@ -146,7 +149,7 @@
   $width: 50%;
 
   @if ($space-between) {
-    $width: calc(50% - #{$space-between / 2});
+    $width: calc(50% - #{math.div($space-between, 2)});
   }
 
   max-width: $width;

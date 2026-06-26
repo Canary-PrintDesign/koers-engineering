@@ -1,54 +1,67 @@
+@use "../functions/functions";
+@use "../objects/layout";
+@use "../settings/breakpoints";
+@use "../settings/colors";
+@use "../settings/core";
+@use "../settings/sizing";
+@use "../tools/center";
+@use "../tools/icons";
+@use "../tools/margin";
+@use "../tools/media";
+@use "../tools/padding";
+@use "../tools/transitions";
+
 .site-header {
   position: fixed;
-  background-color: $color-grey--lightest-alpha;
+  background-color: colors.$color-grey--lightest-alpha;
   width: 100%;
-  border-bottom: 4px solid $color-yellow;
-  z-index: $z-site-header;
-  @include padding-vertical($gutter--large, $gutter);
-  @include transition;
+  border-bottom: 4px solid colors.$color-yellow;
+  z-index: core.$z-site-header;
+  @include padding.padding-vertical(sizing.$gutter--large, sizing.$gutter);
+  @include transitions.transition;
 
   &.opaque {
-    background-color: $color-grey--lightest;
+    background-color: colors.$color-grey--lightest;
   }
 }
 
 .site-header__wrapper {
   display: flex;
 
-  @include screen($bp-desktop) {
-    @include margin-center;
-    @include wrapper-sizing;
+  @include media.screen(breakpoints.$bp-desktop) {
+    @include center.margin-center;
+    @include layout.wrapper-sizing;
   }
 }
 
 .site-logo-link {
-  @include margin-center;
+  @include center.margin-center;
 }
 
 .site-logo {
   font-size: 0;
-  @include icon--color($color-grey--darkest);
-  @include transition;
+  @include icons.icon--color(colors.$color-grey--darkest);
+  @include transitions.transition;
 
-  @include screen($bp-desktop) {
+  @include media.screen(breakpoints.$bp-desktop) {
     flex-basis: calc(100% / 3 * 2);
   }
 
   svg {
     display: inline-block;
-    height: -size($size-header);
-    @include margin-center;
+    height: functions.size(core.$size-header);
+    @include center.margin-center;
 
-    @include max-screen($bp-tablet) {
+    @include media.max-screen(breakpoints.$bp-tablet) {
       width: 70vw;
     }
 
-    @include screen($bp-tablet) {
-      max-height: -size($size-header);
+    @include media.screen(breakpoints.$bp-tablet) {
+      max-height: functions.size(core.$size-header);
     }
 
-    @include screen($bp-desktop) {
-      @include margin-horizontal(0); // reset position
+    @include media.screen(breakpoints.$bp-desktop) {
+      @include margin.margin-horizontal(0); // reset position
     }
   }
 

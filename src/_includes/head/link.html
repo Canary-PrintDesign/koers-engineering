@@ -1,5 +1,6 @@
-<link rel="stylesheet" href="/assets/css/main.css" type="text/css" />
+<link rel="stylesheet" href="/assets/css/main.css">
 
-<link rel="author" href="/humans.txt" />
-{% if site.logo %}<link rel="logo" type="image/svg" href="{{ site.logo}}" />{% endif %}
-{% feed_meta %}
+<link rel="author" href="/humans.txt">
+{% if site.logo %}<link rel="logo" type="image/svg" href="{{ site.logo}}">{% endif %}
+{% capture feed_meta %}{% feed_meta %}{% endcapture %}
+{{ feed_meta | replace: ' />', '>' }}

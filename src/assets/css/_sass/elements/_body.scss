@@ -1,3 +1,10 @@
+@use "../settings/breakpoints";
+@use "../settings/core";
+@use "../tools/font-size";
+@use "../tools/fonts";
+@use "../tools/margin";
+@use "../tools/media";
+
 /*
 
   Body
@@ -5,9 +12,9 @@
 */
 
 body {
-  @include font-body;
-  @include body;
-  @include max-screen($bp-desktop) {
-    @include margin-bottom($size-header);
+  @include fonts.font-body;
+  @include font-size.body;
+  @include media.max-screen(breakpoints.$bp-desktop) {
+    @include margin.margin-bottom(core.$size-header);
   }
 }

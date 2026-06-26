@@ -1,3 +1,8 @@
+@use "sass:list";
+@use "../functions/functions";
+@use "../settings/colors";
+@use "../settings/core";
+
 /*
 
   Text Shadow
@@ -15,16 +20,16 @@
 //
 // Example: @include text-shadow(2px, 2px, 1px);
 @mixin text-shadow(
-  $x: $text-shadow-x,
-  $y: $text-shadow-y,
-  $blur: $text-shadow-blur) {
-    $color: $color-text-shadow;
+  $x: core.$text-shadow-x,
+  $y: core.$text-shadow-y,
+  $blur: core.$text-shadow-blur) {
+    $color: colors.$color-text-shadow;
     $shadow: (null,);
-    $blur-length: length($blur);
+    $blur-length: list.length($blur);
 
     @for $i from 1 through $blur-length {
-      $val: -shadow($x, $y, nth($blur, $i), $color);
-      $shadow: append($shadow, $val);
+      $val: functions.shadow($x, $y, list.nth($blur, $i), $color);
+      $shadow: list.append($shadow, $val);
     }
 
     text-shadow: $shadow;

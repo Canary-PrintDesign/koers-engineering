@@ -1,14 +1,23 @@
+@use "../functions/functions";
+@use "../settings/breakpoints";
+@use "../settings/colors";
+@use "../settings/core";
+@use "../settings/sizing";
+@use "../tools/media";
+@use "../tools/padding";
+@use "../tools/transitions";
+
 .site-nav {
   position: fixed;
   bottom: 0;
   width: 100vw;
-  height: -size($size-header);
-  background-color: $color-grey--lightest;
+  height: functions.size(core.$size-header);
+  background-color: colors.$color-grey--lightest;
 
-  @include screen($bp-desktop) {
+  @include media.screen(breakpoints.$bp-desktop) {
     position: relative;
     background-color: transparent;
-    @include padding-left($gutter--enormous);
+    @include padding.padding-left(sizing.$gutter--enormous);
   }
 }
 
@@ -17,9 +26,9 @@
   width: 100%;
   height: 100%;
   justify-content: space-around;
-  @include padding-horizontal($gutter);
+  @include padding.padding-horizontal(sizing.$gutter);
 
-  @include screen($bp-desktop) {
+  @include media.screen(breakpoints.$bp-desktop) {
     justify-content: space-between;
   }
 }
@@ -29,11 +38,11 @@
 
   &:last-of-type {
     a {
-      @include screen($bp-desktop) {
-        color: $color-grey--darkest;
-        background-color: $color-yellow;
-        box-shadow: inset 0 0 0 1px $color-yellow; // create sizeless border
-        @include padding-horizontal(48px);
+      @include media.screen(breakpoints.$bp-desktop) {
+        color: colors.$color-grey--darkest;
+        background-color: colors.$color-yellow;
+        box-shadow: inset 0 0 0 1px colors.$color-yellow; // create sizeless border
+        @include padding.padding-horizontal(48px);
       }
     }
   }
@@ -46,23 +55,23 @@
   align-items: center;
   font-size: 14px;
   text-decoration: none;
-  color: $color-blue--dark;
-  @include transition;
+  color: colors.$color-blue--dark;
+  @include transitions.transition;
 
-  @include screen($bp-desktop) {
+  @include media.screen(breakpoints.$bp-desktop) {
     font-size: 16px;
-    color: $color-text--dark;
+    color: colors.$color-text--dark;
     font-weight: bold;
     text-transform: uppercase;
   }
 
   @at-root .opaque #{&} {
-    color: $color-grey--darkest;
+    color: colors.$color-grey--darkest;
   }
 }
 
 .site-nav__item .icon {
-  @include screen($bp-desktop) {
+  @include media.screen(breakpoints.$bp-desktop) {
     display: none;
   }
 }

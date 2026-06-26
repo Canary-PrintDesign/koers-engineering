@@ -1,8 +1,16 @@
+@use "../settings/colors";
+@use "../settings/sizing";
+@use "../tools/center";
+@use "../tools/font-size";
+@use "../tools/margin";
+@use "../tools/padding";
+@use "../tools/transitions";
+
 .project-thumbnail__link {
-  color: $color-text--light;
+  color: colors.$color-text--light;
   display: block;
   text-decoration: none;
-  @include margin-bottom($gutter--large);
+  @include margin.margin-bottom(sizing.$gutter--large);
 
   &:hover {
     .project-thumbnail--collapsed {
@@ -14,7 +22,7 @@
 }
 
 .project-thumbnail {
-  background-color: $color-blue;
+  background-color: colors.$color-blue;
   height: 100%;
 
   .project-thumbnail__image-wrapper {
@@ -33,12 +41,12 @@
   }
 
   .project-thumbnail__content {
-    padding: $gutter;
+    padding: sizing.$gutter;
   }
 
   .project-thumbnail__title {
     height: 65px;
-    @include h3;
+    @include font-size.h3;
     display: flex;
     flex-flow: column;
     justify-content: space-around;
@@ -50,7 +58,7 @@
 
     small {
       display: block;
-      @include h4;
+      @include font-size.h4;
     }
   }
 }
@@ -63,22 +71,22 @@
   }
 
   .project-thumbnail__title {
-    background-color: $color-blue--overlay;
+    background-color: colors.$color-blue--overlay;
     height: 100%;
     opacity: 0;
     position: absolute;
     text-align: center;
     top: 0;
     width: 100%;
-    @include transition;
-    @include flex-center;
+    @include transitions.transition;
+    @include center.flex-center;
   }
 
   small {
-    border-top: 2px solid $color-yellow;
+    border-top: 2px solid colors.$color-yellow;
     max-width: 50%;
-    @include margin-center;
-    @include margin-top($gutter--large);
-    @include padding-top($gutter--large);
+    @include center.margin-center;
+    @include margin.margin-top(sizing.$gutter--large);
+    @include padding.padding-top(sizing.$gutter--large);
   }
 }

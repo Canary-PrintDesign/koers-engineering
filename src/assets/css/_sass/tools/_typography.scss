@@ -1,3 +1,8 @@
+@use "../functions/functions";
+@use "../settings/sizing";
+@use "../settings/typography";
+@use "margin";
+
 /*
 
   Typography
@@ -11,7 +16,7 @@
 // $measure: !optional max line length, defaults to $global-measure
 //
 // example: p { @include measure }
-@mixin measure($measure: $global-measure) {
+@mixin measure($measure: typography.$global-measure) {
   max-width: $measure;
 }
 
@@ -22,7 +27,7 @@
 // $width: !optional max column width
 //
 // example: .bio { @include columns(2, 10px) }
-@mixin columns($count: 2, $gap: $gutter--large, $width: null) {
+@mixin columns($count: 2, $gap: sizing.$gutter--large, $width: null) {
   @if ($width != null) {
     column-width: $width;
   } @else {
@@ -30,7 +35,7 @@
   }
 
   column-fill: balance-all;
-  column-gap: -size($gap);
+  column-gap: functions.size($gap);
   orphans: 2;
   widows: 2;
 }
@@ -68,7 +73,7 @@
 
     &:not(:last-of-type)::after {
       content: '#{$separator}';
-      @include margin-horizontal($gutter);
+      @include margin.margin-horizontal(sizing.$gutter);
     }
   }
 }

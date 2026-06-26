@@ -1,3 +1,5 @@
+@use "../tools/icons";
+
 /*
 
   Icons
@@ -17,47 +19,47 @@
 
 .icon--about {
   &:before {
-    content: $icon--about;
+    content: icons.$icon--about;
   }
 }
 .icon--career {
   &:before {
-    content: $icon--career;
+    content: icons.$icon--career;
   }
 }
 .icon--construction {
   &:before {
-    content: $icon--construction;
+    content: icons.$icon--construction;
   }
 }
 .icon--planning {
   &:before {
-    content: $icon--planning;
+    content: icons.$icon--planning;
   }
 }
 .icon--location {
   &:before {
-    content: $icon--location;
+    content: icons.$icon--location;
   }
 }
 .icon--contact {
   &:before {
-    content: $icon--contact;
+    content: icons.$icon--contact;
   }
 }
 .icon--mail {
   &:before {
-    content: $icon--mail;
+    content: icons.$icon--mail;
   }
 }
 .icon--projects {
   &:before {
-    content: $icon--projects;
+    content: icons.$icon--projects;
   }
 }
 .icon--service {
   &:before {
-    content: $icon--service;
+    content: icons.$icon--service;
   }
 }
 .icon--linkedin:before {

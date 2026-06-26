@@ -1,3 +1,5 @@
+@use "../settings/core";
+
 /*
 
   Images
@@ -16,7 +18,7 @@ img {
   vertical-align: middle; // 3
 }
 
-@if ($static-images == true) {
+@if (core.$static-images == true) {
    // If a `width` and/or `height` attribute has been explicitly defined, let’s
    // not make the image fluid.
 

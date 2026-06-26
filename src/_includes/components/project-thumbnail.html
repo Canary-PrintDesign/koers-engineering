@@ -1,15 +1,15 @@
 {% if include.blank %}
-  <div class="project-thumbnail blank" />
+  <div class="project-thumbnail blank"></div>
 {% else %}
   <a
-    id={{project.slug}}
-    data-tags={{ project.tags | join: ',' }}
+    id="{{ project.slug }}"
+    data-tags="{{ project.tags | join: ',' }}"
     href="/projects/{{ project.slug }}"
     class="project-thumbnail__link"
   >
     <div class="project-thumbnail {{ classes }}">
       <div class="project-thumbnail__image-wrapper">
-        <img src="/assets/images/projects/{{ project.slug }}/thumbnail.jpg" />
+        <img src="/assets/images/projects/{{ project.slug }}/thumbnail.jpg" alt="{{ project.title | escape }}">
       </div>
 
       <div class="project-thumbnail__content">

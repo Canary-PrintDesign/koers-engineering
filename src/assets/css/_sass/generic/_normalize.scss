@@ -1,3 +1,6 @@
+@use "../functions/functions";
+@use "../settings/typography";
+
 /*
 
   Normalize
@@ -14,7 +17,7 @@
 // 2. Prevent adjustments of font size after orientation changes in iOS.
 
 html {
-  line-height: $global-line-height; // 1
+  line-height: typography.$global-line-height; // 1
   -webkit-text-size-adjust: 100%; // 2
 }
 
@@ -47,7 +50,7 @@ strong {
 // Add the correct font size in all browsers.
 
 small {
-  font-size: -size(10px);
+  font-size: functions.size(10px);
 }
 
 // Forms
@@ -61,7 +64,7 @@ input,
 textarea {
   font-family: inherit; // 1
   font-size: 100%; // 1
-  line-height: $global-line-height; // 1
+  line-height: typography.$global-line-height; // 1
   margin: 0; // 2
 }
 

@@ -1,3 +1,5 @@
+@use "../functions/functions";
+
 /*
 
   Colors
@@ -18,49 +20,49 @@ $yellow: (
 );
 
 $greys: (
-    0: hsl(0, 0,   0),
-   10: hsl(0, 0,  10%),
-   20: hsl(0, 0,  20%),
-   30: hsl(0, 0,  30%),
-   40: hsl(0, 0,  40%),
-   50: hsl(0, 0,  50%),
-   60: hsl(0, 0,  60%),
-   70: hsl(0, 0,  70%),
-   80: hsl(0, 0,  80%),
-   90: hsl(0, 0,  90%),
-  100: hsl(0, 0, 100%),
+    0: hsl(0, 0%,   0%),
+   10: hsl(0, 0%,  10%),
+   20: hsl(0, 0%,  20%),
+   30: hsl(0, 0%,  30%),
+   40: hsl(0, 0%,  40%),
+   50: hsl(0, 0%,  50%),
+   60: hsl(0, 0%,  60%),
+   70: hsl(0, 0%,  70%),
+   80: hsl(0, 0%,  80%),
+   90: hsl(0, 0%,  90%),
+  100: hsl(0, 0%, 100%),
 );
 
 $greys--alpha: (
-   20: hsla(0, 0, 10%,  .2),
-   40: hsla(0, 0, 10%,  .4),
-   60: hsla(0, 0, 10%,  .6),
-   80: hsla(0, 0, 10%,  .8),
-  100: hsla(0, 0, 10%, 1.0),
+   20: hsla(0, 0%, 10%,  .2),
+   40: hsla(0, 0%, 10%,  .4),
+   60: hsla(0, 0%, 10%,  .6),
+   80: hsla(0, 0%, 10%,  .8),
+  100: hsla(0, 0%, 10%, 1.0),
 );
 
-$color-grey--lightest: -color($greys, 100);
-$color-grey--lighter:  -color($greys,  80);
-$color-grey--light:    -color($greys,  70);
-$color-grey:           -color($greys,  50);
-$color-grey--dark:     -color($greys,  30);
-$color-grey--darker:   -color($greys,  20);
-$color-grey--darkest:  -color($greys,   0);
+$color-grey--lightest: functions.color($greys, 100);
+$color-grey--lighter:  functions.color($greys,  80);
+$color-grey--light:    functions.color($greys,  70);
+$color-grey:           functions.color($greys,  50);
+$color-grey--dark:     functions.color($greys,  30);
+$color-grey--darker:   functions.color($greys,  20);
+$color-grey--darkest:  functions.color($greys,   0);
 
 $color-grey--lightest-alpha: hsla(255, 100%, 100%, 0.8);
 
-$color-yellow:        -color($yellow);
-$color-yellow--hover: -color($yellow, hover);
+$color-yellow:        functions.color($yellow);
+$color-yellow--hover: functions.color($yellow, hover);
 
-$color-blue:          -color($blue);
-$color-blue--dark:    -color($blue, dark);
-$color-blue--logo:    -color($blue, logo);
-$color-blue--overlay: -color($blue, overlay);
+$color-blue:          functions.color($blue);
+$color-blue--dark:    functions.color($blue, dark);
+$color-blue--logo:    functions.color($blue, logo);
+$color-blue--overlay: functions.color($blue, overlay);
 
-$color-text:        -color($blue, base);
+$color-text:        functions.color($blue, base);
 $color-text--light: $color-grey--lightest;
-$color-text--dark:  -color($blue, dark);
+$color-text--dark:  functions.color($blue, dark);
 
-$color-box-shadow:   -color($greys--alpha, 20);
-$color-text-shadow:  -color($greys--alpha, 80);
-$color-overlay: -color($blue, overlay);
+$color-box-shadow:   functions.color($greys--alpha, 20);
+$color-text-shadow:  functions.color($greys--alpha, 80);
+$color-overlay: functions.color($blue, overlay);

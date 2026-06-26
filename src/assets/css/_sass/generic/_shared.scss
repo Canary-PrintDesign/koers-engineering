@@ -1,3 +1,5 @@
+@use "../settings/sizing";
+
 /*
 
   Shared
@@ -14,11 +16,11 @@ figure,
 hr,
 table,
 fieldset {
-  margin-bottom: $global-spacing-unit;
+  margin-bottom: sizing.$global-spacing-unit;
 }
 
 // Consistent indentation for lists.
 
 dd, ol, ul {
-  margin-left: $global-spacing-unit;
+  margin-left: sizing.$global-spacing-unit;
 }
