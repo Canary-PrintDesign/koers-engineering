@@ -1,28 +1,17 @@
 #!/bin/bash
-mkdir -p dist/assets/js
-mkdir -p dist/assets/css
+set -euo pipefail
 
-rm -rf dist/assets/js/*
-rm -rf dist/assets/css/*
+npm run -s build:dirs
+npm run -s build:css
+npm run -s build:js
 
-./node_modules/.bin/node-sass src/assets/css/main.scss --output dist/assets/css/
-./node_modules/.bin/babel src/ --out-file dist/assets/js/app.js
+cleanup() {
+  jobs -p | xargs -r kill 2>/dev/null || true
+}
 
-trap 'echo "Bye!!!"; kill %1; kill %2; kill %3' SIGINT SIGKILL SIGQUIT
+trap cleanup EXIT INT TERM
 
-bundle exec jekyll build \
-  --drafts \
-  --watch \
-  --config 'src/_config.yml,src/_config-common.yml,src/_config-development.yml' \
-  --source src/ \
-  --destination dist/ \
-& ./node_modules/.bin/babel src/ \
-   --watch \
-   --out-file dist/assets/js/app.js \
-   --source-maps \
-& ./node_modules/.bin/node-sass \
-  --watch \
-  --recursive src/assets/css/main.scss \
-  --source-map-embed true \
-  --output dist/assets/css/ \
-& ./node_modules/.bin/browser-sync dist -w  -f ./dist
+npm run -s build:jekyll:dev &
+npm run -s watch:js &
+npm run -s watch:css &
+npm run -s serve

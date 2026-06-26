@@ -11,9 +11,14 @@
 */
 
 @mixin transition($properties...) {
+  $transition-properties: $global-transition-property;
+
+  @if length($properties) > 0 {
+    $transition-properties: $properties;
+  }
+
   transition-delay: $global-transition-delay;
   transition-duration: $global-transition-duration;
-  transition-property: if ($properties, $properties, $global-transition-property);
+  transition-property: $transition-properties;
   transition-timing-function: $global-transition-timing-function;
 }
-

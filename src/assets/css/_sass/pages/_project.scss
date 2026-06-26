@@ -39,7 +39,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  @include flex-column-to-row($bp-desktop)
+  @include flex-column-to-row($bp-desktop);
   @include margin-bottom($gutter);
 
   @include screen($bp-desktop) {
